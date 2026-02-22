@@ -1,0 +1,204 @@
+Build a multi-page portfolio website using HTML, CSS, and JavaScript only (no backend required).
+The theme must be Dark Mode with violet and purple gradient accents.
+Design should look modern, clean, professional, and responsive for mobile and desktop.
+
+🎨 DESIGN REQUIREMENTS
+
+Background: Dark (#0f0f1a or similar)
+
+Accent colors: Violet and Purple gradient (like #8A2BE2, #6A0DAD, #9400D3)
+
+Use smooth hover animations
+
+Rounded buttons
+
+Soft glow effects on buttons
+
+Smooth scrolling
+
+Responsive design
+
+📄 PAGES REQUIRED
+
+Create the following pages:
+
+index.html (Home)
+
+contact.html (Contact Me)
+
+support.html (Customer Support)
+
+about.html (About Me)
+
+pricing.html (Website Pricing)
+
+editing.html (Video Editing Services)
+
+Include a navbar on all pages with links to all pages.
+
+🏠 HOME PAGE (index.html)
+
+Hero Section:
+Title: “ANIK ADHIKARI”
+Subtitle: “Professional Video Editor, Thumbnail Designer & Website Builder”
+CTA Button: “Contact Me”
+
+Portfolio Section:
+Show sample work cards (use placeholder images for now)
+Each card should have:
+
+Image
+
+Title
+
+Short description
+
+Smooth hover effect on portfolio items.
+
+📞 CONTACT PAGE (contact.html)
+
+Display:
+
+Phone: +91 9434190516
+Email: glisticgamerofficial@gmail.com
+
+Add a Contact Form with:
+
+Name
+
+Email
+
+Message
+
+When user clicks submit:
+The message should automatically open WhatsApp with pre-filled message using this link format:
+
+https://wa.me/919434190516?text=YOUR_MESSAGE_HERE
+
+Use JavaScript to encode the message properly.
+
+Also add:
+
+Clickable phone link (tel:+919434190516)
+
+Clickable email link (mailto:glisticgamerofficial@gmail.com)
+
+🛠 SUPPORT PAGE (support.html)
+
+Add:
+
+Form with:
+Name
+Email
+Problem Description (textarea)
+Upload Image (file input)
+
+When submitted:
+Redirect to WhatsApp with pre-filled message including:
+Name + Email + Problem Description
+
+Display phone number again:
++91 9434190516
+
+👤 ABOUT PAGE (about.html)
+
+Content:
+
+“My name is ANIK ADHIKARI.
+I have a gaming channel on YouTube.
+I can help you in:
+
+Video Editing
+
+Thumbnail Designing
+
+Website Building
+
+I create modern, high-quality digital experiences for creators and businesses.”
+
+Make it visually attractive with sections and icons.
+
+💰 PRICING PAGE (pricing.html)
+
+Create 3 pricing cards with glow effect:
+
+1️⃣ BASIC PLAN – ₹2000/month
+
+Basic Website
+
+No Custom Domain (.com or .in not included)
+
+Minimal Customization
+
+5 Hours Customer Support
+
+2️⃣ STANDARD PLAN – ₹5000/month
+
+Standard Website
+
+Fully Customizable
+
+Animations Included
+
+No Custom Domain
+
+8 Hours Customer Support
+
+3️⃣ PREMIUM PLAN – ₹10000/month
+
+Premium Website
+
+Fully Customizable
+
+Animations
+
+Custom Domain Included
+
+24/7 Customer Support
+
+Add “Contact to Buy” button under each plan linking to WhatsApp.
+
+🎬 EDITING PAGE (editing.html)
+
+Text:
+
+“For professional video editing services,
+please call or email me.”
+
+Phone: +91 9434190516
+Email: glisticgamerofficial@gmail.com
+
+Add call and email buttons.
+
+⚙️ TECH REQUIREMENTS
+
+Use one shared CSS file (style.css)
+
+Use one shared JavaScript file (script.js)
+
+Use Google Fonts (Poppins or Montserrat)
+
+Add smooth animations
+
+Fully responsive design
+
+Clean and professional layout
+
+📱 IMPORTANT FUNCTIONALITY
+
+Whenever someone submits a form:
+
+It should redirect to WhatsApp
+
+Use encoded text
+
+Format message nicely
+
+Example format:
+
+Hello, my name is [Name]
+My email is [Email]
+Message: [User Message]
+
+Make the UI look modern, premium, and attractive.
+Use violet-purple gradient buttons with glow effects.

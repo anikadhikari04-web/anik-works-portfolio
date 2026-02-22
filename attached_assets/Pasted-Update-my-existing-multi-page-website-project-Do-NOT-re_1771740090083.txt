@@ -1,0 +1,171 @@
+Update my existing multi-page website project.
+Do NOT redesign everything.
+Only apply the following precise modifications.
+
+Keep the dark violet-purple theme exactly as it is.
+
+✅ FIX 1 — PORTFOLIO VIDEO EDITING SECTION
+
+In the Portfolio page → Video Editing section:
+
+Add two embedded YouTube videos under the Video Editing category.
+
+Embed these videos properly using responsive iframe:
+
+https://youtu.be/Uem1zUKncuE
+
+https://youtu.be/8lO_GYI8K4o
+
+Requirements:
+
+Use responsive iframe (16:9 ratio)
+
+Add smooth hover effect
+
+Add slight glow border in violet
+
+Videos must look premium and aligned properly in grid
+
+Do NOT remove existing items, just add these two properly
+
+✅ FIX 2 — ABOUT PAGE PHOTO REPLACEMENT
+
+In About page:
+
+Replace the current image with a new image placeholder:
+
+Use:
+<img src="about.jpg" alt="Anik Adhikari">
+
+Do NOT use old image.
+Keep layout same.
+Make image responsive and slightly glowing border.
+
+(I will upload about.jpg manually.)
+
+✅ FIX 3 — COMPLETELY REPLACE PRICING PAGE
+
+Delete the entire current pricing content.
+
+Replace with WEBSITE BUILDING PRICING exactly like this:
+
+Create 3 glowing cards:
+
+BASIC PLAN – ₹2000/month
+Includes:
+• Basic Website
+• No Custom Domain (.com or .in not included)
+• Minimal Customization
+• 5 Hours Customer Support
+
+STANDARD PLAN – ₹5000/month
+Includes:
+• Standard Website
+• Fully Customizable
+• Animations Included
+• No Custom Domain
+• 8 Hours Customer Support
+
+PREMIUM PLAN – ₹10000/month
+Includes:
+• Premium Website
+• Fully Customizable
+• Animations
+• Custom Domain Included
+• 24/7 Customer Support
+
+Each plan must have:
+“Contact to Buy” button
+
+Button must redirect to:
+https://wa.me/919434190516
+
+Highlight STANDARD as “Most Popular”
+
+Make cards glowing violet with 3D hover effect.
+
+✅ FIX 4 — ADD BUTTONS ON HOME PAGE
+
+On Home page under:
+
+Video Editing section → Add button:
+"Contact for Editing"
+Redirect to contact.html
+
+Under Thumbnail Design → Add button:
+"Contact for Thumbnails"
+Redirect to contact.html
+
+Under Website Building → Add button:
+"View Website Pricing"
+Redirect to pricing.html
+
+Buttons must:
+
+Be centered
+
+Glowing
+
+3D effect
+
+Smooth hover animation
+
+✅ FIX 5 — UPGRADE ALL BUTTONS DESIGN
+
+Make all buttons:
+
+Strong pink-violet gradient
+
+3D depth using box-shadow
+
+Glow effect
+
+Hover lift animation
+
+Slight scale effect on hover
+
+Smooth transition
+
+Use professional CSS.
+
+✅ FIX 6 — ADD "HIRE ME" BUTTON IN NAVBAR
+
+In top navigation bar:
+
+Add button on right side:
+HIRE ME
+
+Style:
+
+Bright pink gradient
+
+Rounded
+
+Strong glow
+
+Slight animation pulse
+
+Redirect to:
+contact.html
+
+Make it stand out from other nav links.
+
+IMPORTANT RULES
+
+Do NOT break existing layout
+
+Do NOT remove pages
+
+Do NOT change theme colors
+
+Only apply listed fixes
+
+Keep responsive design
+
+Keep WhatsApp functionality intact
+
+Use clean structured code
+
+Update shared CSS if needed
+
+Make everything look premium and professional.
