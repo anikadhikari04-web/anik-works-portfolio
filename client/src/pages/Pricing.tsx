@@ -10,7 +10,7 @@ const plans = [
       "Basic Website",
       "No Custom Domain ( like-.com or .in )",
       "Minimal Customization",
-      "5 Hours/Day Customer Support"
+      "5 Hours/Day Customer Support",
     ],
     highlight: false,
     delay: 0
@@ -24,7 +24,7 @@ const plans = [
       "No Custom Domain ( like-.com or .in )",
       "Fully Customizable",
       "8 Hours/day Customer Support",
-      "Animations Included"
+      "Animations Included",
     ],
     highlight: true,
     delay: 0.1
@@ -38,9 +38,9 @@ const plans = [
       "Custom Domain Included",
       "Maximum Customizable",
       "24/7 Customer Support",
-      "Animations Included"
-      "SEO Optimized"
-      "No Page Limit"
+      "Animations Included",
+      "SEO Optimized",
+      "No Page Limit",
     ],
     highlight: false,
     delay: 0.2
