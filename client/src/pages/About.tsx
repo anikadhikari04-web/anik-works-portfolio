@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ExternalLink } from "lucide-react";
 import profileImg from "@assets/about_1771741090985.jpg";
 
 export default function About() {
@@ -9,6 +9,8 @@ export default function About() {
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          
+          {/* LEFT SIDE */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -22,19 +24,38 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
+
+            {/* 🔹 WEBSITE LINK BELOW PHOTO */}
+            <div className="mt-6 flex justify-center">
+              <a
+                href="https://sites.google.com/view/glisticgamer/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary/40 border border-primary/30 hover:border-primary hover:shadow-[0_0_15px_rgba(138,43,226,0.4)] transition-all duration-300 text-sm font-medium"
+              >
+                Visit My Gaming Website
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+
             {/* Decorative background element */}
             <div className="absolute -inset-4 bg-primary/20 rounded-3xl -z-10 blur-xl" />
           </motion.div>
 
+          {/* RIGHT SIDE */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">About <span className="text-gradient">Me</span></h1>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              About <span className="text-gradient">Me</span>
+            </h1>
+
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
               My name is <span className="text-white font-bold">ANIK ADHIKARI</span>. I have a gaming channel on YouTube. I create modern, high-quality digital experiences for creators and businesses.
             </p>
+
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               I can help you in: <span className="text-primary font-bold">Video Editing, Thumbnail Designing, and Website Building</span>. My approach combines technical precision with artistic flair.
             </p>
