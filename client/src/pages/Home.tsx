@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Edit, Monitor } from "lucide-react";
 
 // Portfolio images
-import project1 from "@assets/done_1771734894662.jpg";
+import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg"; // ✅ Squid Game Special
 import project2 from "@assets/fire_ball_(1)_1771734894663.jpg";
 import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
@@ -14,7 +14,6 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-[#0f0f1a] text-white font-sans">
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden">
-        {/* Subtle Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full z-0" />
         
         <div className="container relative z-10 flex flex-col items-center text-center">
@@ -24,7 +23,9 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
           >
-            <span className="text-xs font-bold tracking-widest uppercase text-white/70">Available for Hire</span>
+            <span className="text-xs font-bold tracking-widest uppercase text-white/70">
+              Available for Hire
+            </span>
           </motion.div>
 
           <motion.h1 
@@ -43,7 +44,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-white/60 max-w-3xl mb-12 font-medium leading-relaxed"
           >
-            Professional Video Editor, Thumbnail Designer & Website Builder. I transform ideas into stunning digital reality.
+            Professional Video Editor, Thumbnail Designer & Website Builder. 
+            I transform ideas into stunning digital reality.
           </motion.p>
 
           <motion.div
@@ -54,9 +56,11 @@ export default function Home() {
           >
             <Link href="/contact">
               <a className="btn-premium py-4 px-10 text-lg uppercase tracking-wider group">
-                Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Get Started 
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Link>
+
             <Link href="/portfolio">
               <a className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-lg uppercase tracking-wider">
                 View Portfolio
@@ -65,7 +69,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -111,12 +114,15 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-4">Latest Work</h2>
+              <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-4">
+                Latest Work
+              </h2>
               <div className="w-20 h-1 bg-[#8A2BE2]" />
             </div>
             <Link href="/portfolio">
               <a className="text-white/60 hover:text-white transition-colors p-0 text-lg font-bold group flex items-center">
-                All Projects <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                All Projects 
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Link>
           </div>
@@ -128,13 +134,23 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className="group relative aspect-video rounded-2xl overflow-hidden border border-white/5 bg-card"
               >
-                <img src={img} alt={`Project ${i+1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img 
+                  src={img} 
+                  alt={`Project ${i+1}`} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6">
                   <div className="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
-                    <p className="text-[#8A2BE2] font-bold text-xs uppercase tracking-widest mb-2">Project {i+1}</p>
-                    <h3 className="text-xl font-bold mb-4">Creative Design</h3>
+                    <p className="text-[#8A2BE2] font-bold text-xs uppercase tracking-widest mb-2">
+                      Project {i+1}
+                    </p>
+                    <h3 className="text-xl font-bold mb-4">
+                      Creative Design
+                    </h3>
                     <Link href="/portfolio">
-                      <a className="inline-flex px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-white/90">Details</a>
+                      <a className="inline-flex px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-white/90">
+                        Details
+                      </a>
                     </Link>
                   </div>
                 </div>
@@ -157,7 +173,9 @@ function ServiceCard({ icon, title, description, buttonText, buttonLink }: any) 
       <div className="w-14 h-14 rounded-2xl bg-[#8A2BE2]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
         {icon}
       </div>
-      <h3 className="text-2xl font-black uppercase italic mb-4 tracking-tight">{title}</h3>
+      <h3 className="text-2xl font-black uppercase italic mb-4 tracking-tight">
+        {title}
+      </h3>
       <p className="text-white/50 leading-relaxed font-medium mb-8 flex-1">
         {description}
       </p>
