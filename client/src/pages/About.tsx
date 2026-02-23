@@ -33,7 +33,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary/40 border border-primary/30 hover:border-primary hover:shadow-[0_0_15px_rgba(138,43,226,0.4)] transition-all duration-300 text-sm font-medium"
               >
-                Visit My Gaming Website
+                Our Old Website
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
