@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 const plans = [
   {
     title: "BASIC PLAN",
-    price: "₹2000",
+    price: "₹500",
     period: "month",
     features: [
       "Basic Website",
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     title: "STANDARD PLAN",
-    price: "₹5000",
+    price: "₹1500",
     period: "month",
     features: [
       "Standard Website",
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     title: "PREMIUM PLAN",
-    price: "₹10000",
+    price: "₹5000",
     period: "month",
     features: [
       "Premium Website",
@@ -52,7 +52,9 @@ export default function Pricing() {
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Website Building <span className="text-gradient">Pricing</span></h1>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Website Building <span className="text-gradient">Pricing</span>
+          </h1>
           <p className="text-muted-foreground text-lg">
             Choose the perfect plan for your professional online presence. High-quality websites tailored to your specific needs.
           </p>
@@ -79,12 +81,12 @@ function PricingCard({ title, price, period, features, highlight, delay }: any) 
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
-      className={`pricing-card-glow p-8 rounded-3xl flex flex-col ${
+      className={`relative pricing-card-glow p-8 rounded-3xl flex flex-col ${
         highlight ? "scale-105 z-10 border-primary" : ""
       }`}
     >
       {highlight && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-pink-600 to-violet-700 text-white border-none px-4 py-1">
+        <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-pink-600 to-violet-700 text-white border-none px-4 py-1">
           Most Popular
         </Badge>
       )}
