@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ExternalLink } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import profileImg from "@assets/about_1771741090985.jpg";
 
 export default function About() {
@@ -9,8 +9,6 @@ export default function About() {
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          
-          {/* LEFT SIDE */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -24,25 +22,9 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
-
-            {/* 🔹 WEBSITE LINK BELOW PHOTO */}
-            <div className="mt-6 flex justify-center">
-              <a
-                href="https://sites.google.com/view/glisticgamer/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary/40 border border-primary/30 hover:border-primary hover:shadow-[0_0_15px_rgba(138,43,226,0.4)] transition-all duration-300 text-sm font-medium"
-              >
-                Our Old Website
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Decorative background element */}
             <div className="absolute -inset-4 bg-primary/20 rounded-3xl -z-10 blur-xl" />
           </motion.div>
 
-          {/* RIGHT SIDE */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -53,11 +35,15 @@ export default function About() {
             </h1>
 
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              My name is <span className="text-white font-bold">ANIK ADHIKARI</span>. I have a gaming channel on YouTube. I create modern, high-quality digital experiences for creators and businesses.
+              My name is <span className="text-white font-bold">ANIK ADHIKARI</span>. 
+              I have a gaming channel on YouTube. I create modern, high-quality digital experiences for creators and businesses.
             </p>
 
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              I can help you in: <span className="text-primary font-bold">Video Editing, Thumbnail Designing, and Website Building</span>. My approach combines technical precision with artistic flair.
+              I can help you in: 
+              <span className="text-primary font-bold">
+                {" "}Video Editing, Thumbnail Designing, and Website Building
+              </span>. My approach combines technical precision with artistic flair.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -75,9 +61,39 @@ export default function About() {
           </motion.div>
         </div>
 
+        {/* ===== VIDEO SECTION (NEW) ===== */}
+        <div className="mb-24 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">
+            About <span className="text-gradient">Glistic Works</span>
+          </h2>
+
+          <div className="relative max-w-4xl mx-auto">
+            
+            {/* Glow Background */}
+            <div className="absolute -inset-6 rounded-3xl blur-3xl opacity-60 bg-gradient-to-r from-purple-600 via-violet-500 to-blue-500"></div>
+
+            {/* Video Container */}
+            <div className="relative rounded-3xl overflow-hidden border border-purple-500/30 shadow-[0_0_40px_rgba(138,43,226,0.4)]">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/GzhQgFYSjmU"
+                  title="About Glistic Works"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {/* ===== END VIDEO SECTION ===== */}
+
         {/* Skills Section */}
         <div className="mb-24">
-          <h2 className="text-3xl font-heading font-bold text-center mb-16">My Expertise</h2>
+          <h2 className="text-3xl font-heading font-bold text-center mb-16">
+            My Expertise
+          </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <SkillCard 
@@ -120,6 +136,7 @@ export default function About() {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
