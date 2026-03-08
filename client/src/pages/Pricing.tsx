@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 const plans = [
   {
     title: "BASIC PLAN",
-    price: "₹500",
+    price: "₹499",
     period: "month",
     features: [
       "Basic Website",
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     title: "STANDARD PLAN",
-    price: "₹1500",
+    price: "₹1999",
     period: "month",
     features: [
       "Standard Website",
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     title: "PREMIUM PLAN",
-    price: "₹5000",
+    price: "₹4999",
     period: "month",
     features: [
       "Premium Website",
