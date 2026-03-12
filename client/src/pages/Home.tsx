@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Play, Edit, Monitor } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg";
@@ -13,161 +13,153 @@ export default function Home() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"]
+    offset: ["start start","end end"]
   });
 
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const heroScale = useTransform(scrollYProgress,[0,0.3],[1,0.8]);
+  const heroOpacity = useTransform(scrollYProgress,[0,0.3],[1,0]);
 
   return (
-    <div ref={ref} className="flex flex-col min-h-screen bg-[#0f0f1a] text-white font-sans overflow-x-hidden">
+    <div ref={ref} className="bg-[#0a0a14] text-white overflow-x-hidden">
 
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="min-h-screen flex items-center justify-center relative px-6">
 
-        {/* animated glow background */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[900px] h-[900px] bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-violet-500/20 blur-[160px] rounded-full"
-        />
+        {/* glowing background */}
+        <div className="absolute w-[900px] h-[900px] bg-purple-600/20 blur-[200px] rounded-full"/>
 
         <motion.div
-          style={{ scale: heroScale, opacity: heroOpacity }}
-          className="container relative z-10 text-center"
+        style={{scale:heroScale,opacity:heroOpacity}}
+        className="text-center z-10"
         >
 
-          <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-8xl font-black tracking-tight uppercase italic mb-8"
-          >
-            <span className="text-white">I AM </span>
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
-              ANIK ADHIKARI
+          <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-none">
+
+            <span className="block">GLISTIC</span>
+
+            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-transparent bg-clip-text">
+            WORKS
             </span>
-          </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-12"
-          >
-            Professional Video Editor, Thumbnail Designer & Website Builder.
-            I transform ideas into stunning digital reality.
-          </motion.p>
+          </h1>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <p className="mt-8 text-lg text-white/60 max-w-2xl mx-auto">
+          Creative studio for Video Editing, Thumbnails and Modern Websites.
+          </p>
 
-            <Link href="/contact">
-              <a className="btn-premium px-10 py-4 text-lg uppercase tracking-wider group">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"/>
+          <div className="mt-10 flex gap-6 justify-center">
+
+            <Link href="/portfolio">
+              <a className="btn-premium px-10 py-4 flex items-center gap-2">
+                View Work
+                <ArrowRight size={18}/>
               </a>
             </Link>
 
-            <Link href="/portfolio">
-              <a className="px-10 py-4 border border-white/20 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                View Portfolio
+            <Link href="/contact">
+              <a className="px-10 py-4 border border-white/20 rounded-xl hover:bg-white/10 transition">
+                Hire Me
               </a>
             </Link>
 
           </div>
+
         </motion.div>
+
+      </section>
+
+
+      {/* BIG SCROLL TEXT */}
+      <section className="py-40 px-6 text-center">
+
+        <motion.h2
+        initial={{opacity:0,y:80}}
+        whileInView={{opacity:1,y:0}}
+        transition={{duration:0.8}}
+        className="text-5xl md:text-7xl font-bold leading-tight"
+        >
+        I Build <span className="text-purple-400">Modern Digital Experiences</span>
+        That Help Creators Grow Faster.
+        </motion.h2>
+
       </section>
 
 
       {/* SERVICES */}
-      <section className="py-32 px-4 relative">
+      <section className="py-32 px-6">
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/10"/>
+        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-
-          <ServiceCard
-            icon={<Play className="w-8 h-8 text-purple-400"/>}
-            title="Video Editing"
-            description="Cinematic cuts, engaging pacing and professional color grading."
-            buttonText="Contact for Editing"
-            buttonLink="/contact"
+          <Service
+          title="Video Editing"
+          desc="Cinematic edits, viral pacing and professional storytelling."
           />
 
-          <ServiceCard
-            icon={<Edit className="w-8 h-8 text-purple-400"/>}
-            title="Thumbnail Design"
-            description="High CTR thumbnails built using YouTube psychology."
-            buttonText="Contact for Thumbnails"
-            buttonLink="/contact"
+          <Service
+          title="Thumbnail Design"
+          desc="High click-through thumbnails built with YouTube psychology."
           />
 
-          <ServiceCard
-            icon={<Monitor className="w-8 h-8 text-purple-400"/>}
-            title="Website Building"
-            description="Modern responsive websites built with cutting edge technologies."
-            buttonText="View Website Pricing"
-            buttonLink="/pricing"
+          <Service
+          title="Website Building"
+          desc="High-performance modern websites built with React."
           />
 
         </div>
+
       </section>
 
 
       {/* PORTFOLIO */}
-      <section className="py-32 px-4">
+      <section className="py-40 px-6">
 
-        <div className="container mx-auto">
+        <div className="max-w-7xl mx-auto">
 
-          <div className="flex justify-between items-end mb-14">
-            <h2 className="text-4xl md:text-6xl font-black uppercase italic">
-              Latest Work
-            </h2>
+          <h2 className="text-5xl md:text-7xl font-black mb-20">
+          Selected Work
+          </h2>
 
-            <Link href="/portfolio">
-              <a className="flex items-center gap-2 text-white/70 hover:text-white transition">
-                All Projects
-                <ArrowRight size={18}/>
-              </a>
-            </Link>
-          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            {[project1, project2, project3, project4].map((img, i) => (
-
+            {[project1,project2,project3,project4].map((img,i)=>(
+              
               <motion.div
-                key={i}
-                whileHover={{
-                  rotateX: 8,
-                  rotateY: -8,
-                  scale: 1.05
-                }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="relative rounded-2xl overflow-hidden border border-white/10 group perspective"
+              key={i}
+              whileHover={{scale:1.08,rotateY:8}}
+              transition={{type:"spring",stiffness:200}}
+              className="rounded-2xl overflow-hidden border border-white/10"
               >
 
-                <img
-                  src={img}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-
-                  <Link href="/portfolio">
-                    <a className="px-6 py-2 rounded-full bg-white text-black font-bold text-sm">
-                      View Project
-                    </a>
-                  </Link>
-
-                </div>
+                <img src={img} className="w-full h-full object-cover"/>
 
               </motion.div>
 
             ))}
 
           </div>
+
         </div>
+
+      </section>
+
+
+      {/* SCROLL STATEMENT */}
+      <section className="py-40 text-center">
+
+        <motion.h2
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{duration:1}}
+        className="text-6xl md:text-8xl font-black"
+        >
+
+        LET'S BUILD  
+        <br/>
+        SOMETHING  
+        <span className="text-purple-500">EPIC</span>
+
+        </motion.h2>
+
       </section>
 
     </div>
@@ -175,39 +167,25 @@ export default function Home() {
 }
 
 
-function ServiceCard({ icon, title, description, buttonText, buttonLink }: any) {
+function Service({title,desc}:{title:string,desc:string}){
 
-  return (
+  return(
+
     <motion.div
-      whileHover={{
-        y: -12,
-        rotateX: 6,
-        rotateY: -6
-      }}
-      transition={{ type: "spring", stiffness: 200 }}
-      className="p-10 rounded-[28px] bg-[#1a1a2e] border border-white/5 hover:border-purple-400/40 transition relative overflow-hidden flex flex-col"
+    whileHover={{y:-15,rotateX:6}}
+    className="p-12 bg-[#141425] rounded-[30px] border border-white/10"
     >
 
-      <div className="absolute w-40 h-40 bg-purple-500/10 blur-3xl rounded-full top-0 right-0"/>
-
-      <div className="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-8">
-        {icon}
-      </div>
-
-      <h3 className="text-2xl font-black uppercase italic mb-4">
-        {title}
+      <h3 className="text-3xl font-bold mb-6">
+      {title}
       </h3>
 
-      <p className="text-white/60 mb-8 flex-1">
-        {description}
+      <p className="text-white/60">
+      {desc}
       </p>
 
-      <Link href={buttonLink}>
-        <a className="btn-premium px-6 py-2 text-sm uppercase tracking-widest text-center">
-          {buttonText}
-        </a>
-      </Link>
-
     </motion.div>
-  );
+
+  )
+
 }
