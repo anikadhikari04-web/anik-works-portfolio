@@ -1,234 +1,240 @@
 ```tsx
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Play, Edit, Monitor } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
-// Portfolio images
 import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg";
 import project2 from "@assets/fire_ball_(1)_1771734894663.jpg";
 import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col min-h-screen bg-[#0f0f1a] text-white font-sans">
 
-      {/* HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden">
+const ref = useRef(null);
 
-        <div className="absolute w-[700px] h-[700px] bg-purple-500/20 blur-[150px] rounded-full"></div>
+const { scrollYProgress } = useScroll({
+target: ref,
+offset: ["start start","end end"]
+});
 
-        <div className="container relative z-10 flex flex-col items-center text-center">
+const heroScale = useTransform(scrollYProgress,[0,0.25],[1,0.85]);
+const heroOpacity = useTransform(scrollYProgress,[0,0.25],[1,0]);
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-8xl font-black tracking-tighter mb-8 uppercase italic"
-          >
-            GLISTIC{" "}
-            <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text">
-              WORKS
-            </span>
-          </motion.h1>
+return (
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mb-12"
-          >
-            Professional Video Editing, Thumbnail Design & Modern Website Building.
-          </motion.p>
+<div ref={ref} className="bg-[#0a0a14] text-white overflow-x-hidden">
 
-          <div className="flex gap-6 flex-wrap justify-center">
+{/* HERO */}
 
-            <Link href="/contact">
-              <a className="btn-premium py-4 px-10 text-lg uppercase flex items-center gap-2">
-                Hire Me
-                <ArrowRight size={18}/>
-              </a>
-            </Link>
+<section className="min-h-screen flex items-center justify-center text-center px-6 relative">
 
-            <Link href="/portfolio">
-              <a className="px-10 py-4 rounded-xl border border-white/20 hover:bg-white/10">
-                View Portfolio
-              </a>
-            </Link>
+<div className="absolute w-[900px] h-[900px] bg-purple-600/20 blur-[200px] rounded-full"/>
 
-          </div>
+<motion.div style={{scale:heroScale,opacity:heroOpacity}}>
 
-        </div>
+<h1 className="text-6xl md:text-9xl font-black uppercase italic">
 
-      </section>
+<span className="block">GLISTIC</span>
 
+<span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-transparent bg-clip-text">
+WORKS
+</span>
 
+</h1>
 
-      {/* SERVICES */}
+<p className="mt-10 text-white/60 max-w-2xl mx-auto">
+Creative Studio for Video Editing, Thumbnail Design and Modern Websites.
+</p>
 
-      <section className="py-24 px-4">
+<div className="mt-12 flex gap-6 justify-center flex-wrap">
 
-        <div className="container mx-auto grid md:grid-cols-3 gap-8">
+<Link href="/portfolio">
+<a className="btn-premium px-10 py-4 flex items-center gap-2">
+View Work
+<ArrowRight size={18}/>
+</a>
+</Link>
 
-          <ServiceCard
-            icon={<Play className="w-8 h-8 text-purple-400"/>}
-            title="Video Editing"
-            description="Cinematic edits and engaging storytelling for creators."
-          />
+<Link href="/contact">
+<a className="px-10 py-4 border border-white/20 rounded-xl hover:bg-white/10 transition">
+Hire Me
+</a>
+</Link>
 
-          <ServiceCard
-            icon={<Edit className="w-8 h-8 text-purple-400"/>}
-            title="Thumbnail Design"
-            description="High CTR thumbnails designed to attract viewers."
-          />
+</div>
 
-          <ServiceCard
-            icon={<Monitor className="w-8 h-8 text-purple-400"/>}
-            title="Website Building"
-            description="Modern responsive websites built with the latest technologies."
-          />
+</motion.div>
 
-        </div>
-
-      </section>
+</section>
 
 
+{/* SCROLL TEXT */}
 
-      {/* SCROLL TEXT */}
+<section className="py-32 overflow-hidden">
 
-      <section className="py-24 overflow-hidden">
+<motion.div
+animate={{x:["0%","-50%"]}}
+transition={{repeat:Infinity,duration:25,ease:"linear"}}
+className="text-[120px] font-black whitespace-nowrap text-white/5"
+>
 
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="text-[80px] font-black text-white/5 whitespace-nowrap"
-        >
-          VIDEO EDITING • THUMBNAIL DESIGN • WEBSITE BUILDING • VIDEO EDITING • THUMBNAIL DESIGN •
-        </motion.div>
+VIDEO EDITING • THUMBNAILS • WEBSITE DESIGN • VIDEO EDITING • THUMBNAILS •
 
-      </section>
+</motion.div>
 
-
-
-      {/* PORTFOLIO */}
-
-      <section className="py-24 px-4 bg-black/20">
-
-        <div className="container mx-auto">
-
-          <h2 className="text-4xl md:text-6xl font-black mb-16">
-            Latest Work
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {[project1, project2, project3, project4].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.08 }}
-                className="rounded-xl overflow-hidden border border-white/10"
-              >
-                <img
-                  src={img}
-                  alt="project"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
+</section>
 
 
+{/* SERVICES */}
 
-      {/* VIDEO SECTION */}
+<section className="py-32 px-6">
 
-      <section className="py-24 px-4">
+<div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
 
-        <div className="container mx-auto">
+<Service
+title="Video Editing"
+desc="Cinematic edits, viral pacing and professional storytelling."
+link="/contact"
+/>
 
-          <h2 className="text-4xl md:text-6xl font-black mb-16 text-center">
-            Latest Video
-          </h2>
+<Service
+title="Thumbnail Design"
+desc="High click-through thumbnails built with YouTube psychology."
+link="/contact"
+/>
 
-          <div className="grid md:grid-cols-2 gap-8">
+<Service
+title="Website Building"
+desc="High-performance modern websites built with React."
+link="/pricing"
+/>
 
-            <iframe
-              className="w-full aspect-video rounded-xl"
-              src="https://www.youtube.com/embed/GzhQgFYSjmU"
-              title="video"
-            />
+</div>
 
-            <iframe
-              className="w-full aspect-video rounded-xl"
-              src="https://www.youtube.com/embed/GzhQgFYSjmU"
-              title="video"
-            />
-
-          </div>
-
-        </div>
-
-      </section>
+</section>
 
 
+{/* PORTFOLIO */}
 
-      {/* CTA */}
+<section className="py-40 px-6">
 
-      <section className="py-32 text-center">
+<div className="max-w-7xl mx-auto">
 
-        <motion.h2
-          initial={{ opacity:0, scale:0.9 }}
-          whileInView={{ opacity:1, scale:1 }}
-          transition={{ duration:0.8 }}
-          className="text-5xl md:text-7xl font-black mb-10"
-        >
-          Let's Build Something Amazing
-        </motion.h2>
+<h2 className="text-5xl md:text-7xl font-black mb-20">
+Selected Work
+</h2>
 
-        <Link href="/contact">
-          <a className="btn-premium px-12 py-5 text-xl">
-            Start Project
-          </a>
-        </Link>
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-      </section>
+{[project1,project2,project3,project4].map((img,i)=>(
 
-    </div>
-  );
+<motion.div
+key={i}
+whileHover={{scale:1.08}}
+className="rounded-2xl overflow-hidden border border-white/10"
+>
+
+<img src={img} className="w-full h-full object-cover"/>
+
+</motion.div>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
+
+{/* VIDEO */}
+
+<section className="py-40 px-6 bg-black/20">
+
+<h2 className="text-center text-5xl font-black mb-20">
+Latest Video Work
+</h2>
+
+<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+
+<iframe
+className="w-full aspect-video rounded-xl"
+src="https://www.youtube.com/embed/GzhQgFYSjmU"
+title="Video"
+/>
+
+<iframe
+className="w-full aspect-video rounded-xl"
+src="https://www.youtube.com/embed/GzhQgFYSjmU"
+title="Video"
+/>
+
+</div>
+
+</section>
+
+
+{/* CTA */}
+
+<section className="py-40 text-center">
+
+<motion.h2
+initial={{scale:0.8,opacity:0}}
+whileInView={{scale:1,opacity:1}}
+transition={{duration:1}}
+className="text-7xl font-black mb-10"
+>
+
+LET'S BUILD  
+<br/>
+SOMETHING  
+<span className="text-purple-500">EPIC</span>
+
+</motion.h2>
+
+<Link href="/contact">
+<a className="btn-premium px-12 py-5 text-xl">
+Start a Project
+</a>
+</Link>
+
+</section>
+
+</div>
+
+);
 }
 
 
 
-function ServiceCard({ icon, title, description }: any) {
-  return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="p-10 rounded-2xl bg-[#1a1a2e] border border-white/10 flex flex-col"
-    >
+function Service({title,desc,link}:{title:string,desc:string,link:string}){
 
-      <div className="mb-6">
-        {icon}
-      </div>
+return(
 
-      <h3 className="text-2xl font-bold mb-4">
-        {title}
-      </h3>
+<motion.div
+whileHover={{y:-20}}
+transition={{type:"spring",stiffness:200}}
+className="p-12 bg-[#141425] rounded-[30px] border border-white/10 flex flex-col"
+>
 
-      <p className="text-white/60 mb-8 flex-1">
-        {description}
-      </p>
+<h3 className="text-3xl font-bold mb-6">
+{title}
+</h3>
 
-      <Link href="/contact">
-        <a className="btn-premium px-6 py-2 text-sm text-center">
-          Contact to Buy
-        </a>
-      </Link>
+<p className="text-white/60 mb-10 flex-1">
+{desc}
+</p>
 
-    </motion.div>
-  );
+<Link href={link}>
+<a className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-center">
+Contact to Buy
+</a>
+</Link>
+
+</motion.div>
+
+);
+
 }
 ```
