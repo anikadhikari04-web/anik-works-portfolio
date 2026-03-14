@@ -1,32 +1,19 @@
 ```tsx
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
-
-  const { toast } = useToast();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-
     e.preventDefault();
-
-    if (!name || !email || !message) {
-      toast({
-        title: "Please fill all fields",
-        variant: "destructive",
-      });
-      return;
-    }
 
     const text =
       "Hello, my name is " +
@@ -40,32 +27,31 @@ export default function Contact() {
       "https://wa.me/919434190516?text=" + encodeURIComponent(text);
 
     window.open(url, "_blank");
-
-    toast({
-      title: "Opening WhatsApp",
-      description: "Redirecting you to WhatsApp",
-    });
   };
 
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
 
+        {/* TITLE */}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="text-purple-500">Touch</span>
+            Get In Touch
           </h1>
 
           <p className="text-muted-foreground text-lg">
-            Have a project in mind? Let's discuss it.
+            Contact me for website development or projects.
           </p>
         </div>
+
+        {/* GRID */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
           {/* CONTACT INFO */}
 
-          <Card className="p-8 bg-card/60 backdrop-blur border border-white/10">
+          <Card className="p-8">
 
             <h3 className="text-2xl font-bold mb-6">
               Contact Information
@@ -74,38 +60,28 @@ export default function Contact() {
             <div className="space-y-6">
 
               <div className="flex gap-4 items-start">
-                <Phone className="text-purple-500" />
+                <Phone />
                 <div>
-                  <p className="text-sm text-muted-foreground">
-                    Phone
-                  </p>
-                  <p className="font-medium">
-                    +91 9434190516
-                  </p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <p className="font-medium">+91 9434190516</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
-                <Mail className="text-purple-500" />
+                <Mail />
                 <div>
-                  <p className="text-sm text-muted-foreground">
-                    Email
-                  </p>
-                  <p className="font-medium break-all">
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="font-medium">
                     glisticgamerofficial@gmail.com
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
-                <MapPin className="text-purple-500" />
+                <MapPin />
                 <div>
-                  <p className="text-sm text-muted-foreground">
-                    Location
-                  </p>
-                  <p className="font-medium">
-                    India
-                  </p>
+                  <p className="text-sm text-muted-foreground">Location</p>
+                  <p className="font-medium">India</p>
                 </div>
               </div>
 
@@ -115,7 +91,7 @@ export default function Contact() {
 
           {/* CONTACT FORM */}
 
-          <Card className="p-8 border border-white/10">
+          <Card className="p-8">
 
             <h3 className="text-2xl font-bold mb-6">
               Send Message
@@ -152,65 +128,33 @@ export default function Contact() {
 
         </div>
 
-        {/* DISCORD BOX */}
+        {/* DISCORD BUTTON */}
 
-        <motion.div
-          className="max-w-6xl mx-auto mt-20"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
+        <div className="max-w-6xl mx-auto mt-16 text-center">
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl
-          bg-gradient-to-r from-indigo-500/20 to-purple-500/20
-          border border-purple-500/20
-          shadow-[0_0_60px_rgba(139,92,246,0.5)]">
+          <Card className="p-8">
 
-            <div className="flex items-center gap-5">
+            <h3 className="text-2xl font-bold mb-4">
+              Contact via Discord
+            </h3>
 
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="w-16 h-16 flex items-center justify-center rounded-xl
-                bg-indigo-600 text-white"
-              >
-                <MessageCircle className="w-8 h-8" />
-              </motion.div>
+            <p className="text-muted-foreground mb-6">
+              You can also message me directly on Discord.
+            </p>
 
-              <div>
-
-                <h3 className="text-xl font-bold">
-                  Discord Support
-                </h3>
-
-                <p className="text-muted-foreground">
-                  Message me directly on Discord.
-                </p>
-
-                <p className="text-indigo-400 font-semibold">
-                  @GlisticBoy
-                </p>
-
-              </div>
-
-            </div>
-
-            <motion.a
+            <a
               href="https://discord.com/users/1261207302443241605"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-xl text-white
-              bg-gradient-to-r from-indigo-500 to-purple-600
-              shadow-lg"
             >
-              DM on Discord
-            </motion.a>
+              <Button size="lg">
+                Message on Discord
+              </Button>
+            </a>
 
-          </div>
+          </Card>
 
-        </motion.div>
+        </div>
 
       </div>
     </div>
