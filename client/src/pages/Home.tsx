@@ -1,240 +1,191 @@
-```tsx
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play, Edit, Monitor } from "lucide-react";
 
-import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg";
+// Portfolio images
+import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg"; // ✅ Squid Game Special
 import project2 from "@assets/fire_ball_(1)_1771734894663.jpg";
 import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
 
 export default function Home() {
-
-const ref = useRef(null);
-
-const { scrollYProgress } = useScroll({
-target: ref,
-offset: ["start start","end end"]
-});
-
-const heroScale = useTransform(scrollYProgress,[0,0.25],[1,0.85]);
-const heroOpacity = useTransform(scrollYProgress,[0,0.25],[1,0]);
-
-return (
-
-<div ref={ref} className="bg-[#0a0a14] text-white overflow-x-hidden">
-
-{/* HERO */}
-
-<section className="min-h-screen flex items-center justify-center text-center px-6 relative">
-
-<div className="absolute w-[900px] h-[900px] bg-purple-600/20 blur-[200px] rounded-full"/>
-
-<motion.div style={{scale:heroScale,opacity:heroOpacity}}>
-
-<h1 className="text-6xl md:text-9xl font-black uppercase italic">
-
-<span className="block">GLISTIC</span>
-
-<span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-transparent bg-clip-text">
-WORKS
-</span>
-
-</h1>
-
-<p className="mt-10 text-white/60 max-w-2xl mx-auto">
-Creative Studio for Video Editing, Thumbnail Design and Modern Websites.
-</p>
-
-<div className="mt-12 flex gap-6 justify-center flex-wrap">
-
-<Link href="/portfolio">
-<a className="btn-premium px-10 py-4 flex items-center gap-2">
-View Work
-<ArrowRight size={18}/>
-</a>
-</Link>
-
-<Link href="/contact">
-<a className="px-10 py-4 border border-white/20 rounded-xl hover:bg-white/10 transition">
-Hire Me
-</a>
-</Link>
-
-</div>
-
-</motion.div>
-
-</section>
-
-
-{/* SCROLL TEXT */}
-
-<section className="py-32 overflow-hidden">
-
-<motion.div
-animate={{x:["0%","-50%"]}}
-transition={{repeat:Infinity,duration:25,ease:"linear"}}
-className="text-[120px] font-black whitespace-nowrap text-white/5"
->
-
-VIDEO EDITING • THUMBNAILS • WEBSITE DESIGN • VIDEO EDITING • THUMBNAILS •
-
-</motion.div>
-
-</section>
-
-
-{/* SERVICES */}
-
-<section className="py-32 px-6">
-
-<div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-
-<Service
-title="Video Editing"
-desc="Cinematic edits, viral pacing and professional storytelling."
-link="/contact"
-/>
-
-<Service
-title="Thumbnail Design"
-desc="High click-through thumbnails built with YouTube psychology."
-link="/contact"
-/>
-
-<Service
-title="Website Building"
-desc="High-performance modern websites built with React."
-link="/pricing"
-/>
-
-</div>
-
-</section>
-
-
-{/* PORTFOLIO */}
-
-<section className="py-40 px-6">
-
-<div className="max-w-7xl mx-auto">
-
-<h2 className="text-5xl md:text-7xl font-black mb-20">
-Selected Work
-</h2>
-
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-{[project1,project2,project3,project4].map((img,i)=>(
-
-<motion.div
-key={i}
-whileHover={{scale:1.08}}
-className="rounded-2xl overflow-hidden border border-white/10"
->
-
-<img src={img} className="w-full h-full object-cover"/>
-
-</motion.div>
-
-))}
-
-</div>
-
-</div>
-
-</section>
-
-
-{/* VIDEO */}
-
-<section className="py-40 px-6 bg-black/20">
-
-<h2 className="text-center text-5xl font-black mb-20">
-Latest Video Work
-</h2>
-
-<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-
-<iframe
-className="w-full aspect-video rounded-xl"
-src="https://www.youtube.com/embed/GzhQgFYSjmU"
-title="Video"
-/>
-
-<iframe
-className="w-full aspect-video rounded-xl"
-src="https://www.youtube.com/embed/GzhQgFYSjmU"
-title="Video"
-/>
-
-</div>
-
-</section>
-
-
-{/* CTA */}
-
-<section className="py-40 text-center">
-
-<motion.h2
-initial={{scale:0.8,opacity:0}}
-whileInView={{scale:1,opacity:1}}
-transition={{duration:1}}
-className="text-7xl font-black mb-10"
->
-
-LET'S BUILD  
-<br/>
-SOMETHING  
-<span className="text-purple-500">EPIC</span>
-
-</motion.h2>
-
-<Link href="/contact">
-<a className="btn-premium px-12 py-5 text-xl">
-Start a Project
-</a>
-</Link>
-
-</section>
-
-</div>
-
-);
+  return (
+    <div className="flex flex-col min-h-screen bg-[#0f0f1a] text-white font-sans">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full z-0" />
+        
+        <div className="container relative z-10 flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
+          >
+            <span className="text-xs font-bold tracking-widest uppercase text-white/70">
+              Available for Hire
+            </span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-8xl font-black tracking-tighter mb-8 flex flex-wrap justify-center gap-x-4 uppercase italic"
+          >
+            <span className="text-white">I AM</span>
+            <span className="text-gradient">ANIK ADHIKARI</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-white/60 max-w-3xl mb-12 font-medium leading-relaxed"
+          >
+            Professional Video Editor, Thumbnail Designer & Website Builder. 
+            I transform ideas into stunning digital reality.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-6 items-center"
+          >
+            <Link href="/contact">
+              <a className="btn-premium py-4 px-10 text-lg uppercase tracking-wider group">
+                Get Started 
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Link>
+
+            <Link href="/portfolio">
+              <a className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-lg uppercase tracking-wider">
+                View Portfolio
+              </a>
+            </Link>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30"
+        >
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-white rounded-full" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Services Cards */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ServiceCard 
+              icon={<Play className="w-8 h-8 text-[#8A2BE2]" />}
+              title="Video Editing"
+              description="Cinematic cuts, engaging pacing, and professional color grading for content that stands out."
+              buttonText="Contact for Editing"
+              buttonLink="/contact"
+            />
+            <ServiceCard 
+              icon={<Edit className="w-8 h-8 text-[#8A2BE2]" />}
+              title="Thumbnail Design"
+              description="High-CTR thumbnails that grab attention and drive clicks for your YouTube channel or brand."
+              buttonText="Contact for Thumbnails"
+              buttonLink="/contact"
+            />
+            <ServiceCard 
+              icon={<Monitor className="w-8 h-8 text-[#8A2BE2]" />}
+              title="Website Building"
+              description="Modern, responsive, and performant websites built with the latest technologies and design trends."
+              buttonText="View Website Pricing"
+              buttonLink="/pricing"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Quick View */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-4">
+                Latest Work
+              </h2>
+              <div className="w-20 h-1 bg-[#8A2BE2]" />
+            </div>
+            <Link href="/portfolio">
+              <a className="text-white/60 hover:text-white transition-colors p-0 text-lg font-bold group flex items-center">
+                All Projects 
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[project1, project2, project3, project4].map((img, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -10 }}
+                className="group relative aspect-video rounded-2xl overflow-hidden border border-white/5 bg-card"
+              >
+                <img 
+                  src={img} 
+                  alt={`Project ${i+1}`} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6">
+                  <div className="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+                    <p className="text-[#8A2BE2] font-bold text-xs uppercase tracking-widest mb-2">
+                      Project {i+1}
+                    </p>
+                    <h3 className="text-xl font-bold mb-4">
+                      Creative Design
+                    </h3>
+                    <Link href="/portfolio">
+                      <a className="inline-flex px-6 py-2 rounded-full bg-white text-black font-bold text-sm hover:bg-white/90">
+                        Details
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 
-
-
-function Service({title,desc,link}:{title:string,desc:string,link:string}){
-
-return(
-
-<motion.div
-whileHover={{y:-20}}
-transition={{type:"spring",stiffness:200}}
-className="p-12 bg-[#141425] rounded-[30px] border border-white/10 flex flex-col"
->
-
-<h3 className="text-3xl font-bold mb-6">
-{title}
-</h3>
-
-<p className="text-white/60 mb-10 flex-1">
-{desc}
-</p>
-
-<Link href={link}>
-<a className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-center">
-Contact to Buy
-</a>
-</Link>
-
-</motion.div>
-
-);
-
+function ServiceCard({ icon, title, description, buttonText, buttonLink }: any) {
+  return (
+    <motion.div 
+      whileHover={{ y: -10 }}
+      className="p-10 rounded-[32px] bg-[#1a1a2e] border border-white/5 hover:border-[#8A2BE2]/30 transition-all group relative overflow-hidden flex flex-col"
+    >
+      <div className="absolute top-0 right-0 w-32 h-32 bg-[#8A2BE2]/5 blur-3xl rounded-full" />
+      <div className="w-14 h-14 rounded-2xl bg-[#8A2BE2]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+        {icon}
+      </div>
+      <h3 className="text-2xl font-black uppercase italic mb-4 tracking-tight">
+        {title}
+      </h3>
+      <p className="text-white/50 leading-relaxed font-medium mb-8 flex-1">
+        {description}
+      </p>
+      <div className="flex justify-center">
+        <Link href={buttonLink}>
+          <a className="btn-premium px-6 py-2 text-sm uppercase tracking-widest">
+            {buttonText}
+          </a>
+        </Link>
+      </div>
+    </motion.div>
+  );
 }
-```
