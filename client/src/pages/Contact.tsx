@@ -5,17 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  MessageSquare,
-  MessageCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+
   const { toast } = useToast();
 
   const [name, setName] = useState("");
@@ -23,6 +17,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
+
     e.preventDefault();
 
     if (!name || !email || !message) {
@@ -33,19 +28,22 @@ export default function Contact() {
       return;
     }
 
-    const text = encodeURIComponent(
-      `Hello, my name is ${name}
-My email is ${email}
-Message: ${message}`
-    );
+    const text =
+      "Hello, my name is " +
+      name +
+      ". My email is " +
+      email +
+      ". Message: " +
+      message;
 
-    const url = `https://wa.me/919434190516?text=${text}`;
+    const url =
+      "https://wa.me/919434190516?text=" + encodeURIComponent(text);
 
     window.open(url, "_blank");
 
     toast({
-      title: "Opening WhatsApp...",
-      description: "Redirecting you to send the message.",
+      title: "Opening WhatsApp",
+      description: "Redirecting you to WhatsApp",
     });
   };
 
@@ -53,236 +51,146 @@ Message: ${message}`
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
 
-        {/* PAGE TITLE */}
-
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Get In <span className="text-gradient">Touch</span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Get In <span className="text-purple-500">Touch</span>
           </h1>
 
           <p className="text-muted-foreground text-lg">
-            Have a project in mind? Let's discuss how we can work together.
+            Have a project in mind? Let's discuss it.
           </p>
         </div>
-
-        {/* CONTACT GRID */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
           {/* CONTACT INFO */}
 
-          <div className="space-y-8">
+          <Card className="p-8 bg-card/60 backdrop-blur border border-white/10">
 
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-white/5 shadow-xl">
+            <h3 className="text-2xl font-bold mb-6">
+              Contact Information
+            </h3>
 
-              <h3 className="text-2xl font-heading font-bold mb-6">
-                Contact Information
-              </h3>
+            <div className="space-y-6">
 
-              <div className="space-y-6">
-
-                <a
-                  href="tel:+919434190516"
-                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition group"
-                >
-                  <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition">
-                    <Phone className="w-6 h-6" />
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">
-                      Phone Number
-                    </p>
-                    <p className="text-lg font-medium">+91 9434190516</p>
-                  </div>
-                </a>
-
-                <a
-                  href="mailto:glisticgamerofficial@gmail.com"
-                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition group"
-                >
-                  <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition">
-                    <Mail className="w-6 h-6" />
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">
-                      Email Address
-                    </p>
-                    <p className="text-lg font-medium break-all">
-                      glisticgamerofficial@gmail.com
-                    </p>
-                  </div>
-                </a>
-
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition group">
-
-                  <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">
-                      Location
-                    </p>
-                    <p className="text-lg font-medium">
-                      West Bengal, India
-                    </p>
-                  </div>
-
+              <div className="flex gap-4 items-start">
+                <Phone className="text-purple-500" />
+                <div>
+                  <p className="text-sm text-muted-foreground">
+                    Phone
+                  </p>
+                  <p className="font-medium">
+                    +91 9434190516
+                  </p>
                 </div>
-
               </div>
 
-              {/* SOCIAL */}
-
-              <div className="mt-8 pt-8 border-t border-white/10">
-
-                <h4 className="font-bold mb-4">Follow Socials</h4>
-
-                <div className="flex gap-4">
-
-                  <a
-                    href="https://www.youtube.com/@GlisticGamer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-secondary p-3 rounded-full hover:bg-red-600 hover:text-white transition-all"
-                  >
-                    <MessageSquare className="w-5 h-5" />
-                  </a>
-
+              <div className="flex gap-4 items-start">
+                <Mail className="text-purple-500" />
+                <div>
+                  <p className="text-sm text-muted-foreground">
+                    Email
+                  </p>
+                  <p className="font-medium break-all">
+                    glisticgamerofficial@gmail.com
+                  </p>
                 </div>
-
               </div>
 
-            </Card>
+              <div className="flex gap-4 items-start">
+                <MapPin className="text-purple-500" />
+                <div>
+                  <p className="text-sm text-muted-foreground">
+                    Location
+                  </p>
+                  <p className="font-medium">
+                    India
+                  </p>
+                </div>
+              </div>
 
-          </div>
+            </div>
+
+          </Card>
 
           {/* CONTACT FORM */}
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <Card className="p-8 border border-white/10">
 
-            <Card className="p-8 bg-card border-white/5 shadow-2xl relative overflow-hidden">
+            <h3 className="text-2xl font-bold mb-6">
+              Send Message
+            </h3>
 
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
+            <form onSubmit={handleSubmit} className="space-y-6">
 
-              <h3 className="text-2xl font-heading font-bold mb-6">
-                Send a Message
-              </h3>
+              <Input
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <Input
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium ml-1">
-                    Your Name
-                  </label>
+              <Textarea
+                placeholder="Your Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
 
-                  <Input
-                    id="name"
-                    placeholder="John Doe"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="bg-secondary/50 border-white/10 focus:border-primary/50 h-12"
-                  />
-                </div>
+              <Button type="submit" className="w-full">
+                Send via WhatsApp
+                <Send className="ml-2 w-4 h-4" />
+              </Button>
 
-                <div className="space-y-2">
+            </form>
 
-                  <label htmlFor="email" className="text-sm font-medium ml-1">
-                    Email Address
-                  </label>
-
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-secondary/50 border-white/10 focus:border-primary/50 h-12"
-                  />
-
-                </div>
-
-                <div className="space-y-2">
-
-                  <label htmlFor="message" className="text-sm font-medium ml-1">
-                    Message
-                  </label>
-
-                  <Textarea
-                    id="message"
-                    placeholder="Tell me about your project..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="bg-secondary/50 border-white/10 focus:border-primary/50 min-h-[150px] resize-none"
-                  />
-
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full text-lg h-12 shadow-lg shadow-primary/20"
-                >
-                  Send via WhatsApp <Send className="ml-2 w-5 h-5" />
-                </Button>
-
-                <p className="text-xs text-center text-muted-foreground mt-4">
-                  You will be redirected to WhatsApp to send the message.
-                </p>
-
-              </form>
-
-            </Card>
-
-          </motion.div>
+          </Card>
 
         </div>
 
-        {/* DISCORD CONTACT BOX */}
+        {/* DISCORD BOX */}
 
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto mt-20"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
         >
 
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl
-            bg-gradient-to-r from-indigo-500/10 to-purple-600/10
-            border border-purple-500/20
-            shadow-[0_0_60px_rgba(139,92,246,0.4)] backdrop-blur-xl"
-          >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl
+          bg-gradient-to-r from-indigo-500/20 to-purple-500/20
+          border border-purple-500/20
+          shadow-[0_0_60px_rgba(139,92,246,0.5)]">
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
 
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
                 className="w-16 h-16 flex items-center justify-center rounded-xl
-                bg-indigo-600 text-white shadow-[0_0_40px_rgba(99,102,241,0.9)]"
+                bg-indigo-600 text-white"
               >
                 <MessageCircle className="w-8 h-8" />
               </motion.div>
 
               <div>
-                <h3 className="text-2xl font-bold">Discord Support</h3>
 
-                <p className="text-muted-foreground mt-1 max-w-md">
-                  Prefer Discord? You can directly message me for website
-                  projects, thumbnails or video editing.
+                <h3 className="text-xl font-bold">
+                  Discord Support
+                </h3>
+
+                <p className="text-muted-foreground">
+                  Message me directly on Discord.
                 </p>
 
-                <p className="text-indigo-400 font-semibold mt-2">
+                <p className="text-indigo-400 font-semibold">
                   @GlisticBoy
                 </p>
+
               </div>
 
             </div>
@@ -293,18 +201,14 @@ Message: ${message}`
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              animate={{ y: [0, -5, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="px-8 py-4 rounded-xl font-semibold text-white
+              className="px-8 py-4 rounded-xl text-white
               bg-gradient-to-r from-indigo-500 to-purple-600
-              shadow-[0_0_40px_rgba(139,92,246,0.9)]
-              hover:shadow-[0_0_70px_rgba(139,92,246,1)]
-              transition-all"
+              shadow-lg"
             >
               DM on Discord
             </motion.a>
 
-          </motion.div>
+          </div>
 
         </motion.div>
 
