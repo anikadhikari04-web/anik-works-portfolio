@@ -95,7 +95,6 @@ export default function Contact() {
                   <a href="https://www.youtube.com/@GlisticGamer" target="_blank" rel="noopener noreferrer" className="bg-secondary p-3 rounded-full hover:bg-red-600 hover:text-white transition-all">
                     <MessageSquare className="w-5 h-5" />
                   </a>
-                  {/* Add more social icons here */}
                 </div>
               </div>
             </Card>
@@ -157,7 +156,22 @@ export default function Contact() {
             </Card>
           </motion.div>
         </div>
+
+        {/* DISCORD BUTTON (added only this part) */}
+        <div className="max-w-6xl mx-auto mt-16 text-center">
+          <a
+            href="https://discord.com/users/1261207302443241605"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg">
+              Message me on Discord
+            </Button>
+          </a>
+        </div>
+
       </div>
     </div>
   );
 }
+```
