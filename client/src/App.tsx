@@ -8,9 +8,9 @@ import { useEffect } from "react";
 // Components
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 // Pages
-import FloatingContact from "@/components/FloatingContact";
 import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
 import Support from "@/pages/Support";
@@ -45,20 +45,25 @@ function Router() {
 
 function App() {
   return (
-    <>
-  <YourRoutes />
-  <FloatingContact />
-</>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ScrollToTop />
+
         <div className="flex flex-col min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
+          
           <Navbar />
+
           <main className="flex-grow">
             <Router />
           </main>
+
           <Footer />
+
+          {/* Floating WhatsApp + Discord Buttons */}
+          <FloatingContact />
+
         </div>
+
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
