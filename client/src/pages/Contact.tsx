@@ -158,17 +158,36 @@ export default function Contact() {
         </div>
 
         {/* DISCORD BUTTON (added only this part) */}
-        <div className="max-w-6xl mx-auto mt-16 text-center">
-          <a
-            href="https://discord.com/users/1261207302443241605"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button size="lg">
-              Message me on Discord
-            </Button>
-          </a>
-        </div>
+<div className="max-w-6xl mx-auto mt-16 text-center">
+  <motion.a
+    href="https://discord.com/users/1261207302443241605"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.15 }}
+    whileTap={{ scale: 0.9 }}
+    animate={{
+      scale: [1, 1.08, 1],
+      boxShadow: [
+        "0 0 10px #5865F2",
+        "0 0 25px #5865F2",
+        "0 0 10px #5865F2"
+      ]
+    }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+    className="inline-block rounded-xl"
+  >
+    <Button
+      size="lg"
+      className="text-lg px-8 py-6 bg-[#5865F2] hover:bg-[#4752c4] text-white shadow-lg"
+    >
+      Message me on Discord
+    </Button>
+  </motion.a>
+</div>
 
       </div>
     </div>
