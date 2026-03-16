@@ -47,7 +47,7 @@ export default function About() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {["Video Editing", "Thumbnail Designing", "Website Building", "AI Prompt Engineering", "Social Media Manager", "Minecraft Server Developer"].map((item, i) => (
+              {["Video Editing", "Thumbnail Designing", "Website Building", "AI Prompt Engineering", "Social Media Manager", "Minecraft and Discord Server Developer"].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <CheckCircle2 className="text-primary w-5 h-5 flex-shrink-0" />
                   <span className="font-medium">{item}</span>
