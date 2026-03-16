@@ -10,6 +10,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 // Pages
+import FloatingContact from "@/components/FloatingContact";
 import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
 import Support from "@/pages/Support";
@@ -44,6 +45,10 @@ function Router() {
 
 function App() {
   return (
+    <>
+  <YourRoutes />
+  <FloatingContact />
+</>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ScrollToTop />
