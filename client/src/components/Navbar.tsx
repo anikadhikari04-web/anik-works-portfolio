@@ -24,8 +24,8 @@ export function Navbar() {
           {/* LOGO */}
           <Link href="/">
             <a className="text-2xl font-bold italic tracking-tight uppercase">
-              <span className="text-white">GLISTIC</span>
-              <span className="text-purple-500">WORKS</span>
+              <span className="text-white">GLISTIC </span>
+              <span className="text-purple-500"> WORKS</span>
             </a>
           </Link>
 
