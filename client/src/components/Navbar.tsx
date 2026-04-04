@@ -22,12 +22,20 @@ export function Navbar() {
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* LOGO */}
-          <Link href="/">
-            <a className="text-2xl font-bold italic tracking-tight uppercase">
-              <span className="text-white">GLISTIC </span>
-              <span className="text-purple-500"> WORKS</span>
-            </a>
-          </Link>
+<Link href="/">
+  <a className="flex items-center gap-2 text-2xl font-bold italic tracking-tight uppercase">
+    
+    <img
+      src="/logo.png"
+      alt="Glistic Works Logo"
+      className="h-10 w-auto object-contain"
+    />
+
+    <span className="text-white">GLISTIC </span>
+    <span className="text-purple-500">WORKS</span>
+
+  </a>
+</Link>
 
           {/* DESKTOP LINKS */}
           <div className="hidden lg:flex items-center gap-8">
