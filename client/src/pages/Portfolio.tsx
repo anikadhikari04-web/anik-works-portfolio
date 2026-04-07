@@ -1,4 +1,3 @@
-```tsx
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -63,29 +62,21 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* 🔥 PREMIUM CTA SECTION */}
+        {/* 🔥 CLEAN PREMIUM CTA SECTION (SAFE) */}
         <div className="flex justify-center gap-4 md:gap-6 flex-wrap mb-12">
-          
+
           {/* Project 1 */}
           <motion.a
             href="https://glisticworks.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              boxShadow: [
-                "0 0 10px #a855f7",
-                "0 0 30px #a855f7",
-                "0 0 10px #a855f7",
-              ],
-            }}
+            whileTap={{ scale: 0.96 }}
+            animate={{ opacity: [1, 0.85, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 text-white text-sm md:text-lg font-semibold overflow-hidden"
+            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 text-white text-sm md:text-lg font-semibold overflow-hidden shadow-[0_0_25px_rgba(168,85,247,0.6)]"
           >
-            <span className="relative z-10">🚀 Project 1</span>
-
-            {/* Wave glow */}
+            <span className="relative z-10">Project 1</span>
             <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
           </motion.a>
 
@@ -95,20 +86,12 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              boxShadow: [
-                "0 0 10px #06b6d4",
-                "0 0 30px #06b6d4",
-                "0 0 10px #06b6d4",
-              ],
-            }}
+            whileTap={{ scale: 0.96 }}
+            animate={{ opacity: [1, 0.85, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm md:text-lg font-semibold overflow-hidden"
+            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm md:text-lg font-semibold overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.6)]"
           >
-            <span className="relative z-10">⚡ Project 2</span>
-
-            {/* Wave glow */}
+            <span className="relative z-10">Project 2</span>
             <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
           </motion.a>
 
@@ -191,4 +174,3 @@ export default function Portfolio() {
     </div>
   );
 }
-```
