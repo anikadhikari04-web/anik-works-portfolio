@@ -1,7 +1,7 @@
+```tsx
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
 // Import images
@@ -37,7 +37,6 @@ const projects: Project[] = [
   { id: 9, image: img9, title: "Video Editing", category: "web" },
   { id: 10, image: img10, title: "Web Dashboard UI", category: "web" },
   { id: 11, image: img11, title: "Admin Panel Design", category: "web" },
-  // YouTube Videos
   { id: 101, videoUrl: "https://www.youtube.com/embed/Uem1zUKncuE", title: "Premium Edit 1", category: "editing" },
   { id: 102, videoUrl: "https://www.youtube.com/embed/8lO_GYI8K4o", title: "Premium Edit 2", category: "editing" },
 ];
@@ -45,44 +44,107 @@ const projects: Project[] = [
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
 
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : projects.filter(p => p.category === filter);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">My <span className="text-gradient">Portfolio</span></h1>
+        
+        {/* Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+            My <span className="text-gradient">Portfolio</span>
+          </h1>
           <p className="text-muted-foreground text-lg">
-            A showcase of my recent work in video editing, graphic design, and web development. Each project represents a unique challenge and a creative solution.
+            A showcase of my recent work in video editing, graphic design, and web development.
           </p>
         </div>
 
+        {/* 🔥 PREMIUM CTA SECTION */}
+        <div className="flex justify-center gap-4 md:gap-6 flex-wrap mb-12">
+          
+          {/* Project 1 */}
+          <motion.a
+            href="https://glisticworks.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{
+              boxShadow: [
+                "0 0 10px #a855f7",
+                "0 0 30px #a855f7",
+                "0 0 10px #a855f7",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 text-white text-sm md:text-lg font-semibold overflow-hidden"
+          >
+            <span className="relative z-10">🚀 Project 1</span>
+
+            {/* Wave glow */}
+            <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
+          </motion.a>
+
+          {/* Project 2 */}
+          <motion.a
+            href="https://cha-a-chumuk.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{
+              boxShadow: [
+                "0 0 10px #06b6d4",
+                "0 0 30px #06b6d4",
+                "0 0 10px #06b6d4",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm md:text-lg font-semibold overflow-hidden"
+          >
+            <span className="relative z-10">⚡ Project 2</span>
+
+            {/* Wave glow */}
+            <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
+          </motion.a>
+
+        </div>
+
+        {/* Filters */}
         <Tabs defaultValue="all" className="w-full mb-12" onValueChange={setFilter}>
           <div className="flex justify-center">
             <TabsList className="bg-secondary/50 p-1 rounded-full border border-white/5">
-              <TabsTrigger value="all" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">All Work</TabsTrigger>
-              <TabsTrigger value="editing" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">Video Editing</TabsTrigger>
-              <TabsTrigger value="thumbnail" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">Thumbnails</TabsTrigger>
-              <TabsTrigger value="web" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">Web Design</TabsTrigger>
+              <TabsTrigger value="all" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
+                All Work
+              </TabsTrigger>
+              <TabsTrigger value="editing" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
+                Video Editing
+              </TabsTrigger>
+              <TabsTrigger value="thumbnail" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
+                Thumbnails
+              </TabsTrigger>
+              <TabsTrigger value="web" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
+                Web Design
+              </TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
 
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        {/* Projects Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
+                key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                key={project.id}
                 className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 shadow-xl hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.2)]"
               >
                 <div className="aspect-video overflow-hidden bg-black">
@@ -90,23 +152,28 @@ export default function Portfolio() {
                     <iframe
                       src={project.videoUrl}
                       className="w-full h-full border-none"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
                   ) : (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
+                    <img
+                      src={project.image}
+                      alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   )}
                 </div>
-                
+
                 <div className="p-6">
-                  <Badge className="w-fit mb-3 bg-primary/20 text-primary hover:bg-primary/30 border-primary/20">
-                    {project.category === "web" ? "Web Design" : project.category === "editing" ? "Video Editing" : "Thumbnail"}
+                  <Badge className="w-fit mb-3 bg-primary/20 text-primary border-primary/20">
+                    {project.category === "web"
+                      ? "Web Design"
+                      : project.category === "editing"
+                      ? "Video Editing"
+                      : "Thumbnail"}
                   </Badge>
-                  <h3 className="text-xl font-heading font-bold text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                  <h3 className="text-xl font-heading font-bold text-white group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
@@ -115,10 +182,13 @@ export default function Portfolio() {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-muted-foreground text-lg">No projects found in this category yet.</p>
+            <p className="text-muted-foreground text-lg">
+              No projects found in this category yet.
+            </p>
           </div>
         )}
       </div>
     </div>
   );
 }
+```
