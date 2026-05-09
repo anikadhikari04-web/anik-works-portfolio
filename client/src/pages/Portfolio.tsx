@@ -95,6 +95,21 @@ export default function Portfolio() {
             <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
           </motion.a>
 
+          {/* Project 3 */}
+          <motion.a
+            href="https://inomadic-2-eosin.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.96 }}
+            animate={{ opacity: [1, 0.85, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="relative px-6 md:px-10 py-4 md:py-5 rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white text-sm md:text-lg font-semibold overflow-hidden shadow-[0_0_25px_rgba(249,115,22,0.6)]"
+          >
+            <span className="relative z-10">Project 3</span>
+            <div className="absolute inset-0 opacity-20 animate-pulse bg-[radial-gradient(circle_at_center,white,transparent_70%)]"></div>
+          </motion.a>
+
         </div>
 
         {/* Filters */}
