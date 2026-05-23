@@ -15,7 +15,6 @@ import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
 import Support from "@/pages/Support";
 import About from "@/pages/About";
-import Pricing from "@/pages/Pricing";
 import Editing from "@/pages/Editing";
 import Portfolio from "@/pages/Portfolio";
 import NotFound from "@/pages/not-found";
@@ -23,7 +22,7 @@ import NotFound from "@/pages/not-found";
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
   return null;
 }
@@ -35,7 +34,6 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/support" component={Support} />
       <Route path="/about" component={About} />
-      <Route path="/pricing" component={Pricing} />
       <Route path="/editing" component={Editing} />
       <Route path="/portfolio" component={Portfolio} />
       <Route component={NotFound} />

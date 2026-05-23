@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --background: 240 20% 8%; /* #0f0f1a - Deep dark blue/black */
+  --background: 240 20% 3%; /* #08080c - Extremely dark blue/black */
   --foreground: 260 20% 98%;
 
-  --card: 240 22% 12%;
+  --card: 240 22% 6%;
   --card-foreground: 260 20% 98%;
 
-  --popover: 240 22% 12%;
+  --popover: 240 22% 6%;
   --popover-foreground: 260 20% 98%;
 
   --primary: 271 76% 53%; /* #8A2BE2 - Blue Violet */
@@ -20,7 +20,7 @@
   --secondary: 260 20% 18%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 240 20% 18%;
+  --muted: 240 20% 10%;
   --muted-foreground: 260 10% 70%;
 
   --accent: 280 80% 60%; /* #9400D3 - Dark Violet */

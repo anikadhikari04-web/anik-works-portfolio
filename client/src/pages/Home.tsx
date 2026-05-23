@@ -11,7 +11,7 @@ import project4 from "@assets/One_Block_3_1771734894673.jpg";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f0f1a] text-white font-sans">
+    <div className="flex flex-col min-h-screen bg-background text-white font-sans">
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full z-0" />
@@ -20,7 +20,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
           >
             <span className="text-xs font-bold tracking-widest uppercase text-white/70">
@@ -31,8 +31,8 @@ export default function Home() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-8xl font-black tracking-tighter mb-8 flex flex-wrap justify-center gap-x-4 uppercase italic"
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 flex flex-wrap justify-center gap-x-4 uppercase italic"
           >
             <span className="text-white">I AM</span>
             <span className="text-gradient">ANIK ADHIKARI</span>
@@ -41,8 +41,8 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/60 max-w-3xl mb-12 font-medium leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-base sm:text-lg md:text-xl text-white/60 max-w-3xl mb-12 font-medium leading-relaxed px-4"
           >
             Professional Video Editor, Thumbnail Designer & Website Builder. 
             I transform ideas into stunning digital reality.
@@ -51,18 +51,18 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-6 items-center"
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto px-4 sm:px-0"
           >
             <Link href="/contact">
-              <a className="btn-premium py-4 px-10 text-lg uppercase tracking-wider group">
+              <a className="btn-premium py-4 px-10 text-lg uppercase tracking-wider group w-full sm:w-auto text-center">
                 Get Started 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Link>
 
             <Link href="/portfolio">
-              <a className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-lg uppercase tracking-wider">
+              <a className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-lg uppercase tracking-wider w-full sm:w-auto text-center">
                 View Portfolio
               </a>
             </Link>
@@ -102,8 +102,8 @@ export default function Home() {
               icon={<Monitor className="w-8 h-8 text-[#8A2BE2]" />}
               title="Website Building"
               description="Modern, responsive, and performant websites built with the latest technologies and design trends."
-              buttonText="View Website Pricing"
-              buttonLink="/pricing"
+              buttonText="Contact for Website"
+              buttonLink="/contact"
             />
           </div>
         </div>
@@ -137,6 +137,7 @@ export default function Home() {
                 <img 
                   src={img} 
                   alt={`Project ${i+1}`} 
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6">
@@ -163,11 +164,11 @@ export default function Home() {
   );
 }
 
-function ServiceCard({ icon, title, description, buttonText, buttonLink }: any) {
+function ServiceCard({ icon, title, description, buttonText, buttonLink }: { icon: React.ReactNode, title: string, description: string, buttonText: string, buttonLink: string }) {
   return (
     <motion.div 
       whileHover={{ y: -10 }}
-      className="p-10 rounded-[32px] bg-[#1a1a2e] border border-white/5 hover:border-[#8A2BE2]/30 transition-all group relative overflow-hidden flex flex-col"
+      className="p-10 rounded-[32px] bg-card border border-white/5 hover:border-[#8A2BE2]/30 transition-all duration-300 group relative overflow-hidden flex flex-col"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-[#8A2BE2]/5 blur-3xl rounded-full" />
       <div className="w-14 h-14 rounded-2xl bg-[#8A2BE2]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
