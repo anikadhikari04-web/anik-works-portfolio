@@ -197,9 +197,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-block relative group"
+            className="inline-block relative"
           >
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110" />
             <img 
               src={profileImg} 
               alt="Anik Adhikari" 
