@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Download } from "lucide-react";
 import profileImg from "@/assets/assetsabout.jpg";
 
 export default function About() {
@@ -12,7 +12,7 @@ export default function About() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="relative"
+            className="relative group"
           >
             <div className="aspect-square rounded-2xl overflow-hidden border-2 border-primary/30 shadow-[0_0_20px_rgba(138,43,226,0.3)] relative z-10">
               <img 
@@ -20,7 +20,16 @@ export default function About() {
                 alt="Anik Adhikari" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none" />
+              
+              <a 
+                href={profileImg} 
+                download="Anik Adhikari.jpg"
+                className="absolute bottom-4 right-4 bg-primary/80 hover:bg-primary text-white p-3 rounded-full backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl z-20 flex items-center gap-2"
+                title="Download Full Quality Image"
+              >
+                <Download className="w-5 h-5" />
+              </a>
             </div>
             <div className="absolute -inset-4 bg-primary/20 rounded-3xl -z-10 blur-xl" />
           </motion.div>
