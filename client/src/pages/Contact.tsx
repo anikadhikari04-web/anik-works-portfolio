@@ -190,8 +190,6 @@ export default function Contact() {
   </motion.a>
 </div>
 
-</div>
-
         {/* Big Rounded Image */}
         <div className="max-w-4xl mx-auto mt-24 text-center pb-12">
           <motion.div
