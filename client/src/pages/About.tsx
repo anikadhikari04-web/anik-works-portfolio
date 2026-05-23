@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
-import profileImg from "@assets/about_1771741090985.jpg";
+import profileImg from "@assets/assetsabout.jpg";
 
 export default function About() {
   return (
