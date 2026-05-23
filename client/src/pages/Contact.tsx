@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import profileImg from "@/assets/assetsabout.jpg";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -188,6 +189,26 @@ export default function Contact() {
     </Button>
   </motion.a>
 </div>
+
+</div>
+
+        {/* Big Rounded Image */}
+        <div className="max-w-4xl mx-auto mt-24 text-center pb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="inline-block relative group"
+          >
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <img 
+              src={profileImg} 
+              alt="Anik Adhikari" 
+              className="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover border-4 border-white/10 shadow-2xl relative z-10"
+            />
+          </motion.div>
+        </div>
 
       </div>
     </div>
