@@ -8,20 +8,32 @@ import project1 from "@assets/squid_game_-_Copy_1771734894675.jpg"; // ✅ Squid
 import project2 from "@assets/fire_ball_(1)_1771734894663.jpg";
 import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
+import profileImg from "@/assets/assetsabout.jpg";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-white font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full z-0" />
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden bg-black/40">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80 z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full z-0" />
         
         <div className="container relative z-10 flex flex-col items-center text-center">
           <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/10 mb-6 shadow-2xl relative"
+          >
+            <div className="absolute inset-0 bg-black/20 z-10" />
+            <img src={profileImg} alt="Anik Adhikari" className="w-full h-full object-cover relative z-0" />
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-black/50 backdrop-blur-md mb-8"
           >
             <span className="text-xs font-bold tracking-widest uppercase text-white/70">
               Available for Hire
