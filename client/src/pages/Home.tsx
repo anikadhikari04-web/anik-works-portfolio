@@ -20,14 +20,13 @@ export default function Home() {
         
         <div className="container relative z-10 flex flex-col items-center text-center">
           <div className="relative mb-6">
-            <div className="absolute inset-0 rounded-full bg-primary/40 blur-2xl z-0 scale-125 transition-transform duration-500 hover:scale-150" />
+            <div className="absolute inset-0 rounded-full bg-primary/40 blur-2xl z-0 scale-125" />
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/30 shadow-[0_0_30px_rgba(138,43,226,0.4)] relative z-10"
             >
-              <div className="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-500" />
               <img src={profileImg} alt="Anik Adhikari" className="w-full h-full object-cover relative z-0" />
             </motion.div>
           </div>
