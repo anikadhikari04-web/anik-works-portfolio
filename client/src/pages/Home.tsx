@@ -46,10 +46,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 flex flex-col items-center justify-center gap-y-2 uppercase italic"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 flex flex-wrap justify-center gap-x-4 uppercase italic"
           >
-            <span className="text-white">GLISTIC WORKS</span>
-            <span className="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl">By Anik Adhikari</span>
+            <span className="text-white">I AM</span>
+            <span className="text-gradient">ANIK ADHIKARI</span>
           </motion.h1>
 
           <motion.p
