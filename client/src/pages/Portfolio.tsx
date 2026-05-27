@@ -38,6 +38,7 @@ const projects: Project[] = [
   { id: 11, image: img11, title: "Admin Panel Design", category: "web" },
   { id: 101, videoUrl: "https://www.youtube.com/embed/Uem1zUKncuE", title: "Premium Edit 1", category: "editing" },
   { id: 102, videoUrl: "https://www.youtube.com/embed/8lO_GYI8K4o", title: "Premium Edit 2", category: "editing" },
+  { id: 103, videoUrl: "https://www.youtube.com/embed/FfWa7tYofKo", title: "Premium Edit 3", category: "editing" },
 ];
 
 export default function Portfolio() {
