@@ -140,10 +140,10 @@ export default function Portfolio() {
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3, layout: { duration: 0.3 } }}
                 className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 shadow-xl hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.2)]"
               >
                 <div className="aspect-video overflow-hidden bg-black">
