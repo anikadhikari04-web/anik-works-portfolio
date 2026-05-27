@@ -134,49 +134,51 @@ export default function Portfolio() {
         </Tabs>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3, layout: { duration: 0.3 } }}
-                className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 shadow-xl hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.2)]"
-              >
-                <div className="aspect-video overflow-hidden bg-black">
-                  {project.videoUrl ? (
-                    <iframe
-                      src={project.videoUrl}
-                      className="w-full h-full border-none"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  )}
-                </div>
+        <motion.div
+          key={filter} // Re-render the grid entirely when filter changes
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, staggerChildren: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="group relative rounded-2xl overflow-hidden bg-card border border-white/10 shadow-xl hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.2)]"
+            >
+              <div className="aspect-video overflow-hidden bg-black">
+                {project.videoUrl ? (
+                  <iframe
+                    src={project.videoUrl}
+                    className="w-full h-full border-none"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                )}
+              </div>
 
-                <div className="p-6">
-                  <Badge className="w-fit mb-3 bg-primary/20 text-primary border-primary/20">
-                    {project.category === "web"
-                      ? "Web Design"
-                      : project.category === "editing"
-                      ? "Video Editing"
-                      : "Thumbnail"}
-                  </Badge>
-                  <h3 className="text-xl font-heading font-bold text-white group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              <div className="p-6">
+                <Badge className="w-fit mb-3 bg-primary/20 text-primary border-primary/20">
+                  {project.category === "web"
+                    ? "Web Design"
+                    : project.category === "editing"
+                    ? "Video Editing"
+                    : "Thumbnail"}
+                </Badge>
+                <h3 className="text-xl font-heading font-bold text-white group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {filteredProjects.length === 0 && (
