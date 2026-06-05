@@ -124,7 +124,7 @@ export default function About() {
         </div>
 
         {/* Stats */}
-        <div className="bg-card border border-white/5 rounded-3xl p-12 relative overflow-hidden">
+        <div className="bg-card border border-white/5 rounded-3xl p-12 relative overflow-hidden mb-12">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-purple-500 to-primary" />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
             <div>
@@ -144,6 +144,17 @@ export default function About() {
               <p className="text-muted-foreground">Support</p>
             </div>
           </div>
+        </div>
+
+        <div className="flex justify-start">
+          <a 
+            href="https://growing-anik.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-premium px-8 py-4 text-xl font-bold"
+          >
+            My Trading Journey
+          </a>
         </div>
 
       </div>
