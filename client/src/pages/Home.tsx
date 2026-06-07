@@ -257,6 +257,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Let's Work Together Section */}
+      <section className="py-24 px-4 bg-white/5 border-y border-white/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-6 drop-shadow-md">
+            Let's <span className="text-gradient">Work Together</span>
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-medium leading-relaxed">
+            Ready to bring your ideas to life? Whether you need professional video editing, eye-catching thumbnails, or a stunning modern website, I am here to help you achieve your goals.
+          </p>
+          <div className="flex justify-center">
+            <a href="/contact" className="btn-premium py-4 px-12 text-lg uppercase tracking-wider font-bold">
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Quick View */}
       <section className="py-20 px-4 bg-black/20">
         <div className="container mx-auto">

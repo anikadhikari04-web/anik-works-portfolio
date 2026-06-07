@@ -53,11 +53,9 @@ export function Navbar() {
             ))}
 
             {/* HIRE BUTTON */}
-            <Link href="/contact">
-              <a className="px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold shadow-[0_0_20px_rgba(236,72,153,0.6)] hover:scale-110 hover:shadow-[0_0_35px_rgba(236,72,153,0.9)] transition-all duration-300 ease-in-out">
-                Hire Me
-              </a>
-            </Link>
+            <a href="/contact" className="px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold shadow-[0_0_20px_rgba(236,72,153,0.6)] hover:scale-110 hover:shadow-[0_0_35px_rgba(236,72,153,0.9)] transition-all duration-300 ease-in-out">
+              Hire Me
+            </a>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -97,14 +95,13 @@ export function Navbar() {
             </Link>
           ))}
 
-          <Link href="/contact">
-            <a
-              onClick={() => setOpen(false)}
-              className="mt-4 px-5 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-center shadow-[0_0_20px_rgba(236,72,153,0.6)]"
-            >
-              Hire Me
-            </a>
-          </Link>
+          <a
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-4 px-5 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-center shadow-[0_0_20px_rgba(236,72,153,0.6)]"
+          >
+            Hire Me
+          </a>
         </div>
       </div>
 
