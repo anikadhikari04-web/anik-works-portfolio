@@ -146,16 +146,6 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex justify-start">
-          <a 
-            href="https://growing-anik.vercel.app/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-premium px-8 py-4 text-xl font-bold"
-          >
-            My Trading Journey
-          </a>
-        </div>
 
       </div>
     </div>
