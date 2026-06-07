@@ -37,6 +37,17 @@ export default function Contact() {
     });
   };
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("glisticgamerofficial@gmail.com");
+    toast({
+      title: "Email Copied!",
+      description: "Email address copied to clipboard.",
+    });
+    // Attempt to open default mail client as fallback
+    window.location.href = "mailto:glisticgamerofficial@gmail.com";
+  };
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container px-4 md:px-6">
@@ -170,11 +181,9 @@ export default function Contact() {
               <MessageSquare className="mr-2 w-5 h-5" /> WhatsApp Message
             </Button>
           </a>
-          <a href="mailto:glisticgamerofficial@gmail.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-            <Button size="lg" className="w-full text-lg px-8 py-6 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-[0_0_15px_rgba(239,68,68,0.5)] hover:shadow-[0_0_25px_rgba(239,68,68,0.8)] transition-all hover:-translate-y-1 rounded-xl">
-              <Mail className="mr-2 w-5 h-5" /> Email Me
-            </Button>
-          </a>
+          <Button onClick={handleEmailClick} size="lg" className="w-full sm:w-auto text-lg px-8 py-6 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-[0_0_15px_rgba(239,68,68,0.5)] hover:shadow-[0_0_25px_rgba(239,68,68,0.8)] transition-all hover:-translate-y-1 rounded-xl">
+            <Mail className="mr-2 w-5 h-5" /> Email Me
+          </Button>
         </div>
 
         {/* DISCORD BUTTON (added only this part) */}
