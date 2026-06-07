@@ -158,8 +158,27 @@ export default function Contact() {
           </motion.div>
         </div>
 
+        {/* Quick Action Buttons */}
+        <div className="max-w-5xl mx-auto mt-16 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 px-4">
+          <a href="tel:+919434190516" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full text-lg px-8 py-6 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all hover:-translate-y-1 rounded-xl">
+              <Phone className="mr-2 w-5 h-5" /> Call Me
+            </Button>
+          </a>
+          <a href="https://wa.me/919434190516" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full text-lg px-8 py-6 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:shadow-[0_0_25px_rgba(34,197,94,0.8)] transition-all hover:-translate-y-1 rounded-xl">
+              <MessageSquare className="mr-2 w-5 h-5" /> WhatsApp Message
+            </Button>
+          </a>
+          <a href="mailto:glisticgamerofficial@gmail.com" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full text-lg px-8 py-6 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-[0_0_15px_rgba(239,68,68,0.5)] hover:shadow-[0_0_25px_rgba(239,68,68,0.8)] transition-all hover:-translate-y-1 rounded-xl">
+              <Mail className="mr-2 w-5 h-5" /> Email Me
+            </Button>
+          </a>
+        </div>
+
         {/* DISCORD BUTTON (added only this part) */}
-<div className="max-w-6xl mx-auto mt-16 text-center">
+<div className="max-w-6xl mx-auto mt-6 text-center">
   <motion.a
     href="https://discord.com/users/1261207302443241605"
     target="_blank"
