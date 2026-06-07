@@ -124,9 +124,9 @@ export default function Home() {
       </section>
 
       {/* My Skills Section */}
-      <section className="py-24 px-4 relative overflow-hidden bg-black/40 backdrop-blur-3xl">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[800px] bg-[#8A2BE2]/20 blur-[120px] rounded-full z-0 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/10 blur-[150px] rounded-full z-0 pointer-events-none" />
+      <section className="py-24 px-4 relative overflow-hidden bg-black/40">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[800px] bg-[#8A2BE2]/40 blur-[150px] rounded-full z-0 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/30 blur-[150px] rounded-full z-0 pointer-events-none" />
         
         <div className="container mx-auto relative z-10">
           <motion.div 
@@ -346,7 +346,7 @@ function SkillCategory({ title, subtitle, items, delay }: { title: string, subti
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="relative group p-6 rounded-[24px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-[#8A2BE2]/50 hover:shadow-[0_0_30px_rgba(138,43,226,0.3)] hover:-translate-y-1"
+      className="relative group p-6 rounded-[24px] overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 hover:border-[#8A2BE2]/50 hover:shadow-[0_0_40px_rgba(138,43,226,0.6)] hover:-translate-y-1"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-[#8A2BE2]/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       <h3 className="text-xl font-black text-white mb-1 relative z-10 drop-shadow-md">{title}</h3>
@@ -354,7 +354,7 @@ function SkillCategory({ title, subtitle, items, delay }: { title: string, subti
       {!subtitle && <div className="h-4"></div>}
       <div className="flex flex-wrap gap-2 mt-2 relative z-10">
         {items.map((item, idx) => (
-          <span key={idx} className="bg-black/40 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white hover:bg-[#8A2BE2]/40 hover:border-[#8A2BE2]/50 hover:shadow-[0_0_15px_rgba(138,43,226,0.4)] transition-all duration-300 cursor-default font-medium backdrop-blur-md">
+          <span key={idx} className="bg-black/80 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white hover:bg-[#8A2BE2]/60 hover:border-[#8A2BE2]/80 hover:shadow-[0_0_20px_rgba(138,43,226,0.8)] transition-all duration-300 cursor-default font-medium">
             {item}
           </span>
         ))}
