@@ -146,6 +146,59 @@ export default function About() {
           </div>
         </div>
 
+        {/* Resume Section */}
+        <div className="mb-24">
+          <h2 className="text-3xl font-heading font-bold mb-10 text-center">
+            My <span className="text-gradient">Resume</span>
+          </h2>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+            {/* Image */}
+            <div className="relative group w-full max-w-md">
+              <div className="absolute -inset-4 bg-primary/20 rounded-xl blur-xl -z-10" />
+              <img
+                src="/resume/resume.png"
+                alt="Resume"
+                className="w-full rounded-xl border border-primary/30 shadow-[0_0_30px_rgba(138,43,226,0.3)] pointer-events-none select-none"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+              />
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col gap-4 w-full max-w-xs">
+              <a 
+                href="/resume/resume.png" 
+                download="Anik_Adhikari_Resume.png"
+                className="btn-premium w-full text-center py-3 block"
+              >
+                Download Resume PNG
+              </a>
+              <a 
+                href="/resume/resume.jpg" 
+                download="Anik_Adhikari_Resume.jpg"
+                className="btn-premium w-full text-center py-3 block"
+              >
+                Download Resume JPG
+              </a>
+              <a 
+                href="/resume/resume.pdf" 
+                download="Anik_Adhikari_Resume.pdf"
+                className="btn-premium w-full text-center py-3 block"
+              >
+                Download Resume PDF
+              </a>
+              <a 
+                href="/resume/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-secondary hover:bg-secondary/80 text-white font-bold py-3 px-6 rounded-lg transition-all border border-white/10 hover:border-primary/50 text-center block"
+              >
+                View In Chrome
+              </a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
