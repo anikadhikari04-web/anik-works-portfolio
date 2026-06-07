@@ -123,6 +123,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* My Skills Section */}
+      <section className="py-24 px-4 relative overflow-hidden bg-black/20">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8A2BE2]/10 blur-[150px] rounded-full z-0 pointer-events-none" />
+        
+        <div className="container mx-auto relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-4">
+              My <span className="text-gradient">Skills</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#8A2BE2] mx-auto rounded-full" />
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            {/* Picture Side */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-full lg:w-1/3 lg:sticky lg:top-24"
+            >
+              <div className="relative group mx-auto max-w-[280px] sm:max-w-sm lg:max-w-none">
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#8A2BE2]/40 to-blue-500/40 rounded-[40px] blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 bg-card p-2 shadow-2xl relative z-10">
+                   <div className="w-full h-full rounded-[24px] overflow-hidden">
+                      <img
+                        src={profileImg}
+                        alt="Anik Adhikari"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                   </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Skills Details */}
+            <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+               <SkillCategory title="Frontend Web Development" items={["HTML5", "CSS3", "Responsive Web Design", "Landing Page Development", "Portfolio Website Development", "Business Website Development", "UI Layout Design", "Website Deployment", "Vercel Hosting"]} delay={0.1} />
+               <SkillCategory title="AI & Automation" subtitle="AI Tools" items={["AI Prompt Engineering", "AI-Assisted Content Creation", "AI-Assisted Web Development", "AI-Assisted Design Workflow", "AI Research & Productivity Tools"]} delay={0.2} />
+               <SkillCategory title="Creative Skills" subtitle="Video Editing" items={["Gaming Video Editing", "Vlog Editing", "Trading Content Editing", "Short-form Content Editing", "Content Structuring"]} delay={0.3} />
+               <SkillCategory title="Creative Skills" subtitle="Graphic Design" items={["Thumbnail Design", "Social Media Graphics", "Banner Design", "Promotional Creatives"]} delay={0.4} />
+               <SkillCategory title="Community Management" subtitle="Minecraft" items={["Minecraft Server Setup", "Minecraft Server Configuration", "Minecraft Server Review & Testing", "Community Management"]} delay={0.5} />
+               <SkillCategory title="Community Management" subtitle="Discord" items={["Discord Server Setup", "Discord Server Configuration", "Community Moderation", "Role & Permission Management"]} delay={0.6} />
+               <SkillCategory title="Marketing & Business" subtitle="Digital Marketing" items={["Social Media Management", "Content Strategy", "Personal Branding", "Client Communication", "Freelance Outreach"]} delay={0.7} />
+               <SkillCategory title="Technical Tools" subtitle="Development Tools" items={["GitHub", "Vercel", "AI Development Platforms", "Website Builders", "Browser Developer Tools"]} delay={0.8} />
+               <SkillCategory title="Soft Skills" subtitle="Professional Skills" items={["Self-Learning", "Problem Solving", "Research", "Communication", "Client Handling", "Adaptability"]} delay={0.9} />
+               <SkillCategory title="Emerging Skills" subtitle="Still Growing" items={["React", "Spring Boot", "Trading Platform Analysis", "UI/UX Design", "Full-Stack Development", "SEO", "Copywriting"]} delay={1.0} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Resume Section */}
       <section className="py-20 px-4 bg-black/40">
         <div className="container mx-auto">
@@ -275,6 +333,29 @@ function ServiceCard({ icon, title, description, buttonText, buttonLink }: { ico
             {buttonText}
           </a>
         </Link>
+      </div>
+    </motion.div>
+  );
+}
+
+function SkillCategory({ title, subtitle, items, delay }: { title: string, subtitle?: string, items: string[], delay: number }) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      className="bg-card border border-white/5 rounded-2xl p-6 hover:border-[#8A2BE2]/30 transition-colors shadow-lg"
+    >
+      <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
+      {subtitle && <p className="text-[#8A2BE2] text-sm font-bold mb-4 uppercase tracking-wider">{subtitle}</p>}
+      {!subtitle && <div className="h-4"></div>}
+      <div className="flex flex-wrap gap-2 mt-2">
+        {items.map((item, idx) => (
+          <span key={idx} className="bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white/80 hover:bg-[#8A2BE2]/20 hover:text-white transition-colors cursor-default font-medium shadow-sm">
+            {item}
+          </span>
+        ))}
       </div>
     </motion.div>
   );
