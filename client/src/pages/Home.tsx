@@ -124,8 +124,9 @@ export default function Home() {
       </section>
 
       {/* My Skills Section */}
-      <section className="py-24 px-4 relative overflow-hidden bg-black/20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8A2BE2]/10 blur-[150px] rounded-full z-0 pointer-events-none" />
+      <section className="py-24 px-4 relative overflow-hidden bg-black/40 backdrop-blur-3xl">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[800px] bg-[#8A2BE2]/20 blur-[120px] rounded-full z-0 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/10 blur-[150px] rounded-full z-0 pointer-events-none" />
         
         <div className="container mx-auto relative z-10">
           <motion.div 
@@ -345,14 +346,15 @@ function SkillCategory({ title, subtitle, items, delay }: { title: string, subti
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-card border border-white/5 rounded-2xl p-6 hover:border-[#8A2BE2]/30 transition-colors shadow-lg"
+      className="relative group p-6 rounded-[24px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-[#8A2BE2]/50 hover:shadow-[0_0_30px_rgba(138,43,226,0.3)] hover:-translate-y-1"
     >
-      <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
-      {subtitle && <p className="text-[#8A2BE2] text-sm font-bold mb-4 uppercase tracking-wider">{subtitle}</p>}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-[#8A2BE2]/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <h3 className="text-xl font-black text-white mb-1 relative z-10 drop-shadow-md">{title}</h3>
+      {subtitle && <p className="text-[#8A2BE2] text-sm font-bold mb-4 uppercase tracking-wider relative z-10 drop-shadow-[0_0_8px_rgba(138,43,226,0.5)]">{subtitle}</p>}
       {!subtitle && <div className="h-4"></div>}
-      <div className="flex flex-wrap gap-2 mt-2">
+      <div className="flex flex-wrap gap-2 mt-2 relative z-10">
         {items.map((item, idx) => (
-          <span key={idx} className="bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white/80 hover:bg-[#8A2BE2]/20 hover:text-white transition-colors cursor-default font-medium shadow-sm">
+          <span key={idx} className="bg-black/40 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white hover:bg-[#8A2BE2]/40 hover:border-[#8A2BE2]/50 hover:shadow-[0_0_15px_rgba(138,43,226,0.4)] transition-all duration-300 cursor-default font-medium backdrop-blur-md">
             {item}
           </span>
         ))}
