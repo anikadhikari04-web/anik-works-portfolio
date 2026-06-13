@@ -15,6 +15,8 @@ import img8 from "@assets/tomb_raider_2_1771734894683.jpg";
 import img9 from "@assets/Untitlellkd-2_1771734894684.png";
 import img10 from "@assets/Screenshot_(251)_1771734811131.png";
 import img11 from "@assets/Screenshot_(252)_1771734811132.png";
+import img12 from "@assets/portfolio-1.jpg";
+import img13 from "@assets/portfolio-2.jpg";
 
 type Project = {
   id: number;
@@ -36,6 +38,8 @@ const projects: Project[] = [
   { id: 9, image: img9, title: "Video Editing", category: "web" },
   { id: 10, image: img10, title: "Web Dashboard UI", category: "web" },
   { id: 11, image: img11, title: "Admin Panel Design", category: "web" },
+  { id: 12, image: img12, title: "Trading Liquidity", category: "thumbnail" },
+  { id: 13, image: img13, title: "Trading Mastered", category: "thumbnail" },
   { id: 101, videoUrl: "https://www.youtube.com/embed/Uem1zUKncuE", title: "Premium Edit 1", category: "editing" },
   { id: 102, videoUrl: "https://www.youtube.com/embed/8lO_GYI8K4o", title: "Premium Edit 2", category: "editing" },
   { id: 103, videoUrl: "https://www.youtube.com/embed/FfWa7tYofKo", title: "Premium Edit 3", category: "editing" },
