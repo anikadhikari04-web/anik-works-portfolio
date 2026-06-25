@@ -172,24 +172,10 @@ export default function About() {
                 download="Anik_Adhikari_Resume.png"
                 className="btn-premium w-full text-center py-3 block"
               >
-                Download Resume PNG
+                Download Resume
               </a>
               <a 
-                href="/resume/resume.jpg" 
-                download="Anik_Adhikari_Resume.jpg"
-                className="btn-premium w-full text-center py-3 block"
-              >
-                Download Resume JPG
-              </a>
-              <a 
-                href="/resume/resume.pdf" 
-                download="Anik_Adhikari_Resume.pdf"
-                className="btn-premium w-full text-center py-3 block"
-              >
-                Download Resume PDF
-              </a>
-              <a 
-                href="/resume/resume.pdf" 
+                href="/resume/resume.png" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-secondary hover:bg-secondary/80 text-white font-bold py-3 px-6 rounded-lg transition-all border border-white/10 hover:border-primary/50 text-center block"
