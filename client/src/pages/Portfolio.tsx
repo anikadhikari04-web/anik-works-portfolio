@@ -40,9 +40,9 @@ const projects: Project[] = [
   { id: 11, image: img11, title: "Admin Panel Design", category: "web" },
   { id: 12, image: img12, title: "Trading Liquidity", category: "thumbnail" },
   { id: 13, image: img13, title: "Trading Mastered", category: "thumbnail" },
-  { id: 101, videoUrl: "https://www.youtube.com/embed/Uem1zUKncuE", title: "Premium Edit 1", category: "editing" },
-  { id: 102, videoUrl: "https://www.youtube.com/embed/8lO_GYI8K4o", title: "Premium Edit 2", category: "editing" },
-  { id: 103, videoUrl: "https://www.youtube.com/embed/FfWa7tYofKo", title: "Premium Edit 3", category: "editing" },
+  { id: 101, videoUrl: "https://www.youtube.com/embed/zPYbbk73LVk", title: "Video Edit 1", category: "editing" },
+  { id: 102, videoUrl: "https://www.youtube.com/embed/htCLVGDNdZU", title: "Video Edit 2", category: "editing" },
+  { id: 103, videoUrl: "https://www.youtube.com/embed/PKE0XyJQsms", title: "Video Edit 3", category: "editing" },
 ];
 
 export default function Portfolio() {
