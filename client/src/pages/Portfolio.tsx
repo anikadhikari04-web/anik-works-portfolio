@@ -43,6 +43,7 @@ const projects: Project[] = [
   { id: 101, videoUrl: "https://www.youtube.com/embed/zPYbbk73LVk", title: "Video Edit 1", category: "editing" },
   { id: 102, videoUrl: "https://www.youtube.com/embed/htCLVGDNdZU", title: "Video Edit 2", category: "editing" },
   { id: 103, videoUrl: "https://www.youtube.com/embed/PKE0XyJQsms", title: "Video Edit 3", category: "editing" },
+  { id: 104, videoUrl: "https://www.youtube.com/embed/FfWa7tYofKo", title: "Video Edit 4", category: "editing" },
 ];
 
 export default function Portfolio() {
