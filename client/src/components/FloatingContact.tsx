@@ -9,7 +9,7 @@ export default function FloatingContact() {
   };
 
   const openDiscord = () => {
-    window.open("https://discord.com/users/1261207302443241605", "_blank");
+    window.open("https://discord.com/users/1237266648491233280", "_blank");
   };
 
   return (

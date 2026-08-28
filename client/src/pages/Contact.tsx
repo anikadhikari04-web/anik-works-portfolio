@@ -189,7 +189,7 @@ export default function Contact() {
         {/* DISCORD BUTTON (added only this part) */}
 <div className="max-w-6xl mx-auto mt-6 text-center">
   <motion.a
-    href="https://discord.com/users/1261207302443241605"
+    href="https://discord.com/users/1237266648491233280"
     target="_blank"
     rel="noopener noreferrer"
     whileHover={{ scale: 1.15 }}
