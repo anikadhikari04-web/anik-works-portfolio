@@ -138,6 +138,23 @@ export default function Portfolio() {
           </div>
         </Tabs>
 
+        {/* GDrive Link */}
+        <div className="flex justify-start mb-6">
+          <motion.a
+            href="https://drive.google.com/drive/folders/1bShXUBgyjYSSlbMs6ZlZcXMaRKUgKY4k?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-green-400 font-bold text-sm md:text-base lg:text-lg inline-block"
+            style={{ textShadow: "0 0 10px rgba(74,222,128,0.8), 0 0 20px rgba(74,222,128,0.6)" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View more works here &rarr;
+          </motion.a>
+        </div>
+
         {/* Projects Grid */}
         <motion.div
           key={filter} // Re-render the grid entirely when filter changes
