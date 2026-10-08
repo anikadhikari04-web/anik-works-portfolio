@@ -120,21 +120,23 @@ export default function Portfolio() {
 
         {/* Filters */}
         <Tabs defaultValue="all" className="w-full mb-12" onValueChange={setFilter}>
-          <div className="flex justify-center">
-            <TabsList className="bg-secondary/50 p-1 rounded-full border border-white/5">
-              <TabsTrigger value="all" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
-                All Work
-              </TabsTrigger>
-              <TabsTrigger value="editing" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
-                Video Editing
-              </TabsTrigger>
-              <TabsTrigger value="thumbnail" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
-                Thumbnails
-              </TabsTrigger>
-              <TabsTrigger value="web" className="rounded-full px-6 py-2 data-[state=active]:bg-primary data-[state=active]:text-white">
-                Web Design
-              </TabsTrigger>
-            </TabsList>
+          <div className="w-full overflow-x-auto pb-4 -mb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex justify-start sm:justify-center min-w-max px-2 sm:px-0">
+              <TabsList className="bg-secondary/50 p-1 rounded-full border border-white/5 flex shrink-0">
+                <TabsTrigger value="all" className="rounded-full px-5 py-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap">
+                  All Work
+                </TabsTrigger>
+                <TabsTrigger value="editing" className="rounded-full px-5 py-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap">
+                  Video Editing
+                </TabsTrigger>
+                <TabsTrigger value="thumbnail" className="rounded-full px-5 py-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap">
+                  Thumbnails
+                </TabsTrigger>
+                <TabsTrigger value="web" className="rounded-full px-5 py-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap">
+                  Web Design
+                </TabsTrigger>
+              </TabsList>
+            </div>
           </div>
         </Tabs>
 
