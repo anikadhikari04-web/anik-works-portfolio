@@ -53,14 +53,11 @@ export default function Portfolio() {
 
   const handleColabsClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("scrollToSection", "colabs");
+    }
     setLocation("/");
     window.location.hash = "colabs";
-    setTimeout(() => {
-      const el = document.getElementById("colabs") || document.getElementById("scroll-showcase");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 150);
   };
 
   const filteredProjects =

@@ -22,14 +22,9 @@ import NotFound from "@/pages/not-found";
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace("#", "");
-      setTimeout(() => {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 120);
+    const hasHash = Boolean(window.location.hash);
+    const hasSessionScroll = Boolean(typeof window !== "undefined" && sessionStorage.getItem("scrollToSection"));
+    if (hasHash || hasSessionScroll) {
       return;
     }
     window.scrollTo({ top: 0, behavior: "smooth" });

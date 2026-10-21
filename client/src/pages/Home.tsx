@@ -15,15 +15,48 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Home() {
   useEffect(() => {
-    if (window.location.hash === "#colabs" || window.location.hash === "#scroll-showcase") {
-      const timer = setTimeout(() => {
-        const el = document.getElementById("colabs") || document.getElementById("scroll-showcase");
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 150);
-      return () => clearTimeout(timer);
+    const scrollToColabs = (smooth = true) => {
+      const el = document.getElementById("colabs") || document.getElementById("scroll-showcase");
+      if (el) {
+        const navHeight = 80;
+        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = Math.max(0, elementPosition - navHeight);
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: smooth ? "smooth" : "auto",
+        });
+        return true;
+      }
+      return false;
+    };
+
+    const targetSection =
+      (typeof window !== "undefined" && sessionStorage.getItem("scrollToSection")) ||
+      (window.location.hash ? window.location.hash.replace("#", "") : null);
+
+    if (targetSection === "colabs" || targetSection === "scroll-showcase") {
+      sessionStorage.removeItem("scrollToSection");
+
+      scrollToColabs(false);
+      const timer1 = setTimeout(() => scrollToColabs(true), 80);
+      const timer2 = setTimeout(() => scrollToColabs(true), 250);
+      const timer3 = setTimeout(() => scrollToColabs(true), 600);
+
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
     }
+
+    const handleHashChange = () => {
+      if (window.location.hash === "#colabs" || window.location.hash === "#scroll-showcase") {
+        scrollToColabs(true);
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
   return (
     <div className="flex flex-col min-h-screen bg-background text-white font-sans">
