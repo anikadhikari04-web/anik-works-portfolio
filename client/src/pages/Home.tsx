@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-white font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden bg-black/40">
+      <section className="relative min-h-[100svh] flex flex-col items-center justify-center pt-28 pb-16 px-4 overflow-hidden bg-black/40">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80 z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full z-0" />
         
@@ -99,7 +99,7 @@ export default function Home() {
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30"
+          className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 opacity-30 pointer-events-none"
         >
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
             <div className="w-1 h-2 bg-white rounded-full" />
@@ -164,7 +164,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="w-full lg:w-1/3 lg:sticky lg:top-24"
             >
-              <div className="relative group mx-auto max-w-[280px] sm:max-w-sm lg:max-w-none">
+              <div className="relative group mx-auto max-w-[280px] sm:max-w-sm lg:max-w-xs xl:max-w-sm">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#8A2BE2]/40 to-blue-500/40 rounded-[40px] blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 <div className="aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 bg-card p-2 shadow-2xl relative z-10">
                    <div className="w-full h-full rounded-[24px] overflow-hidden">

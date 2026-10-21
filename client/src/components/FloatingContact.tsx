@@ -13,7 +13,7 @@ export default function FloatingContact() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 flex flex-col gap-3 sm:gap-4 z-50">
 
       {/* WhatsApp */}
 
