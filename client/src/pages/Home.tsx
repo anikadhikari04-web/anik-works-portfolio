@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -9,8 +10,20 @@ import project2 from "@assets/fire_ball_(1)_1771734894663.jpg";
 import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
 import profileImg from "@/assets/assetsabout.jpg";
+import ScrollShowcase from "@/components/ScrollShowcase";
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.hash === "#colabs" || window.location.hash === "#scroll-showcase") {
+      const timer = setTimeout(() => {
+        const el = document.getElementById("colabs") || document.getElementById("scroll-showcase");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, []);
   return (
     <div className="flex flex-col min-h-screen bg-background text-white font-sans">
       {/* Hero Section */}
@@ -225,6 +238,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Scroll Showcase Section */}
+      <ScrollShowcase />
+
       {/* Know More About Me Section */}
       <section className="py-20 px-4 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[rgba(138,43,226,0.1)] blur-[120px] rounded-full pointer-events-none transform-gpu will-change-transform z-0" />
@@ -368,3 +384,4 @@ function SkillCategory({ title, subtitle, items, delay }: { title: string, subti
     </motion.div>
   );
 }
+

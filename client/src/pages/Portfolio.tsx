@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
@@ -48,6 +49,19 @@ const projects: Project[] = [
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
+  const [, setLocation] = useLocation();
+
+  const handleColabsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setLocation("/");
+    window.location.hash = "colabs";
+    setTimeout(() => {
+      const el = document.getElementById("colabs") || document.getElementById("scroll-showcase");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 150);
+  };
 
   const filteredProjects =
     filter === "all"
@@ -140,14 +154,27 @@ export default function Portfolio() {
           </div>
         </Tabs>
 
-        {/* GDrive Link */}
-        <div className="flex justify-start mb-6">
+        {/* Navigation & GDrive Links */}
+        <div className="flex flex-col items-start gap-2.5 mb-6">
+          <motion.a
+            href="/#colabs"
+            onClick={handleColabsClick}
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-green-400 font-bold text-sm md:text-base lg:text-lg inline-block cursor-pointer tracking-wider uppercase"
+            style={{ textShadow: "0 0 10px rgba(74,222,128,0.8), 0 0 20px rgba(74,222,128,0.6)" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            COLABS &rarr;
+          </motion.a>
+
           <motion.a
             href="https://drive.google.com/drive/folders/1bShXUBgyjYSSlbMs6ZlZcXMaRKUgKY4k?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
             className="text-green-400 font-bold text-sm md:text-base lg:text-lg inline-block"
             style={{ textShadow: "0 0 10px rgba(74,222,128,0.8), 0 0 20px rgba(74,222,128,0.6)" }}
             whileHover={{ scale: 1.05 }}

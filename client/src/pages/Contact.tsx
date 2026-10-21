@@ -27,10 +27,10 @@ export default function Contact() {
     // Format WhatsApp message
     const text = `Hello, my name is ${name}%0AMy email is ${email}%0AMessage: ${message}`;
     const url = `https://wa.me/919434190516?text=${text}`;
-    
+
     // Open WhatsApp
     window.open(url, "_blank");
-    
+
     toast({
       title: "Opening WhatsApp...",
       description: "Redirecting you to send the message.",
@@ -64,8 +64,8 @@ export default function Contact() {
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-white/5 shadow-xl">
               <h3 className="text-2xl font-heading font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <a 
-                  href="tel:+919434190516" 
+                <a
+                  href="tel:+919434190516"
                   className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group"
                 >
                   <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -77,8 +77,8 @@ export default function Contact() {
                   </div>
                 </a>
 
-                <a 
-                  href="mailto:glisticgamerofficial@gmail.com" 
+                <a
+                  href="mailto:glisticgamerofficial@gmail.com"
                   className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group"
                 >
                   <div className="bg-primary/10 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -113,54 +113,54 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
             <Card className="p-8 bg-card border-white/5 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
-              
+
               <h3 className="text-2xl font-heading font-bold mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium ml-1">Your Name</label>
-                  <Input 
+                  <Input
                     id="name"
-                    placeholder="John Doe" 
+                    placeholder="John Doe"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="bg-secondary/50 border-white/10 focus:border-primary/50 h-12"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium ml-1">Email Address</label>
-                  <Input 
+                  <Input
                     id="email"
                     type="email"
-                    placeholder="john@example.com" 
+                    placeholder="john@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="bg-secondary/50 border-white/10 focus:border-primary/50 h-12"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium ml-1">Message</label>
-                  <Textarea 
+                  <Textarea
                     id="message"
-                    placeholder="Tell me about your project..." 
+                    placeholder="Tell me about your project..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="bg-secondary/50 border-white/10 focus:border-primary/50 min-h-[150px] resize-none"
                   />
                 </div>
-                
+
                 <Button type="submit" size="lg" className="w-full text-lg h-12 shadow-lg shadow-primary/20">
                   Send via WhatsApp <Send className="ml-2 w-5 h-5" />
                 </Button>
-                
+
                 <p className="text-xs text-center text-muted-foreground mt-4">
                   By clicking send, you will be redirected to WhatsApp to send your message directly.
                 </p>
@@ -187,36 +187,36 @@ export default function Contact() {
         </div>
 
         {/* DISCORD BUTTON (added only this part) */}
-<div className="max-w-6xl mx-auto mt-6 text-center">
-  <motion.a
-    href="https://discord.com/users/1237266648491233280"
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{ scale: 1.15 }}
-    whileTap={{ scale: 0.9 }}
-    animate={{
-      scale: [1, 1.08, 1],
-      boxShadow: [
-        "0 0 10px #5865F2",
-        "0 0 25px #5865F2",
-        "0 0 10px #5865F2"
-      ]
-    }}
-    transition={{
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }}
-    className="inline-block rounded-xl"
-  >
-    <Button
-      size="lg"
-      className="text-lg px-8 py-6 bg-[#5865F2] hover:bg-[#4752c4] text-white shadow-lg"
-    >
-      Message me on Discord
-    </Button>
-  </motion.a>
-</div>
+        <div className="max-w-6xl mx-auto mt-6 text-center">
+          <motion.a
+            href="https://discord.com/users/1237266648491233280"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{
+              scale: [1, 1.08, 1],
+              boxShadow: [
+                "0 0 10px #5865F2",
+                "0 0 25px #5865F2",
+                "0 0 10px #5865F2"
+              ]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="inline-block rounded-xl"
+          >
+            <Button
+              size="lg"
+              className="text-lg px-8 py-6 bg-[#5865F2] hover:bg-[#4752c4] text-white shadow-lg"
+            >
+              Message me on Discord
+            </Button>
+          </motion.a>
+        </div>
 
         {/* Big Rounded Image */}
         <div className="max-w-4xl mx-auto mt-24 text-center pb-12">
@@ -228,9 +228,9 @@ export default function Contact() {
             className="inline-block relative"
           >
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110" />
-            <img 
-              src={profileImg} 
-              alt="Anik Adhikari" 
+            <img
+              src={profileImg}
+              alt="Anik Adhikari"
               className="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover border-4 border-white/10 shadow-2xl relative z-10"
             />
           </motion.div>
