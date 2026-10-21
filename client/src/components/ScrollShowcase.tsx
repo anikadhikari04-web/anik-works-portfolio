@@ -597,14 +597,7 @@ export default function ScrollShowcase() {
             <div
               ref={caption1Ref}
               className="absolute inset-0 flex flex-col items-center justify-center text-center"
-            >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase italic tracking-tight text-white drop-shadow-md">
-                SERVERVERSE <span className="text-amber-400">PLATFORM</span>
-              </h3>
-              <p className="text-[11px] sm:text-xs text-white/60 font-medium mt-0.5">
-                Official infrastructure platform team roster
-              </p>
-            </div>
+            />
 
             {/* Caption 2 */}
             <div
