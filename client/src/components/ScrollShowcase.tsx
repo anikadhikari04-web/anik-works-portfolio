@@ -124,7 +124,8 @@ export default function ScrollShowcase() {
             end: "+=2600",
             pin: stageRef.current,
             scrub: 1,
-            anticipatePin: 1,
+            anticipatePin: 0,
+            fastScrollEnd: true,
             invalidateOnRefresh: true,
           },
         });
@@ -402,7 +403,8 @@ export default function ScrollShowcase() {
             end: "+=2400",
             pin: stageRef.current,
             scrub: 1,
-            anticipatePin: 1,
+            anticipatePin: 0,
+            fastScrollEnd: true,
             invalidateOnRefresh: true,
           },
         });
@@ -503,7 +505,8 @@ export default function ScrollShowcase() {
             end: "+=2000",
             pin: stageRef.current,
             scrub: 1,
-            anticipatePin: 1,
+            anticipatePin: 0,
+            fastScrollEnd: true,
             invalidateOnRefresh: true,
           },
         });
@@ -548,7 +551,13 @@ export default function ScrollShowcase() {
         tl.to({}, { duration: 0.1 });
       });
 
+      const handleLoad = () => ScrollTrigger.refresh();
+      window.addEventListener("load", handleLoad);
+      const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+
       return () => {
+        window.removeEventListener("load", handleLoad);
+        clearTimeout(refreshTimer);
         mm.revert();
       };
     },
@@ -559,14 +568,14 @@ export default function ScrollShowcase() {
     <section
       ref={containerRef}
       id="colabs"
-      className="relative w-full bg-[#08080c] text-white overflow-hidden border-t border-b border-white/5 scroll-mt-20"
+      className="relative z-20 w-full bg-[#08080c] text-white overflow-hidden border-t border-b border-white/5 scroll-mt-20"
       aria-label="Serververse to Glistic Works Interactive Journey"
     >
       <div id="scroll-showcase" className="absolute -top-20 opacity-0 pointer-events-none" />
       {/* Pinned Viewport Stage with safe clearance below the 80px fixed navbar */}
       <div
         ref={stageRef}
-        className="h-screen w-full relative flex flex-col items-center justify-between pt-24 md:pt-28 pb-5 px-4 overflow-hidden select-none"
+        className="h-screen w-full relative z-20 flex flex-col items-center justify-between pt-24 md:pt-28 pb-5 px-4 overflow-hidden select-none"
       >
         {/* Ambient Dark Theme Lighting */}
         <div className="absolute inset-0 pointer-events-none z-0">

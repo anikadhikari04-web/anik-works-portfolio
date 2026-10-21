@@ -11,6 +11,7 @@ import project3 from "@assets/justt_reayy_1771734894663.jpg";
 import project4 from "@assets/One_Block_3_1771734894673.jpg";
 import profileImg from "@/assets/assetsabout.jpg";
 import ScrollShowcase from "@/components/ScrollShowcase";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Home() {
   useEffect(() => {
@@ -196,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Resume Section */}
-      <section className="py-20 px-4 bg-black/40 relative overflow-hidden">
+      <section className="py-20 px-4 bg-black/40 relative z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[rgba(0,0,128,0.15)] blur-[150px] rounded-full pointer-events-none transform-gpu will-change-transform z-0" />
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black uppercase italic mb-12 text-center">
@@ -205,12 +206,19 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
             {/* Image */}
-            <div className="relative group w-full max-w-md">
+            <div className="relative group w-full max-w-md aspect-[723/1024]">
               <div className="absolute -inset-4 bg-gradient-to-r from-[rgba(0,0,128,0.5)] to-[rgba(138,43,226,0.5)] rounded-xl blur-2xl -z-10 transform-gpu will-change-transform group-hover:blur-3xl transition-all duration-500" />
               <img
                 src="/resume/resume.png"
                 alt="Resume"
-                className="w-full rounded-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,128,0.6),0_20px_50px_rgba(138,43,226,0.6)] pointer-events-none select-none relative z-10"
+                width={723}
+                height={1024}
+                onLoad={() => {
+                  if (typeof window !== "undefined") {
+                    ScrollTrigger.refresh();
+                  }
+                }}
+                className="w-full h-full object-contain rounded-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,128,0.6),0_20px_50px_rgba(138,43,226,0.6)] pointer-events-none select-none relative z-10"
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
               />
